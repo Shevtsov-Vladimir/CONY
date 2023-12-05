@@ -1,0 +1,76 @@
+nav .breadcrumb {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 64px;
+}
+
+.btn {
+    padding-right: 48px;
+    padding-left: 48px;
+}
+
+.h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    margin-bottom: 20px;
+}
+
+.h5 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 90px;
+}
+
+form:first-child input {
+    margin-bottom: 42px;
+}
+
+.col-12:last-of-type {
+    margin-bottom: 90px;
+}
+
+.cta-reg {
+    padding-top: 25px;
+    padding-left: 27px;
+    padding-right: 25px;
+    padding-bottom: 31px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cta-reg p {
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 28px;
+}
+
+.cta-reg a {
+    color: #E1BE5F;
+    text-align: center;
+    font-size: 16px;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+@media screen and (min-width: 768px) {
+    nav .breadcrumb {
+        margin-top: 41px;
+        margin-bottom: 80px;
+    }
+
+    .row {
+        margin-bottom: 123px;
+    }
+
+    .cta-reg {
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 25px 69px 26px 25px;
+    }
+}

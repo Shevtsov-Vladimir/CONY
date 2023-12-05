@@ -1,0 +1,273 @@
+// import the Montserrat font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+$dark: #312D2D;
+$yellow: #E1BE5F;
+
+$theme-colors: (
+    "yellow": $yellow,
+    "dark": $dark
+);
+
+$navbar-light-toggler-icon-bg: url('/img/Menu.svg');
+$navbar-dark-toggler-icon-bg: url('/img/Menu.svg');
+$navbar-light-toggler-border-color: #FFF;
+$navbar-dark-toggler-border-color:  #FFF;
+
+
+// scss-docs-start form-input-variables
+$input-font-family: 'Montserrat';
+$input-font-size: 14px;
+$input-font-weight: 400;
+
+$input-border-color: rgba(49, 45, 45, 0.5);
+$input-border-width: 1px;
+$input-box-shadow: null;
+
+$input-border-radius: 0;
+
+$input-placeholder-color: rgba(49, 45, 45, 0.5);
+$input-plaintext-color: $dark;
+
+$input-height: 27px;
+
+$input-btn-focus-width: null;
+$input-btn-focus-color-opacity: null;
+$input-btn-focus-color: null;
+$input-btn-focus-blur: null;
+$input-btn-focus-box-shadow: null;
+
+// scss-docs-end form-input-variables
+
+form .form-control {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid rgba(49, 45, 45, 0.5);
+}
+
+form .form-control:focus {
+    border-color: rgba(49, 45, 45, 0.5);
+    box-shadow: none;
+}
+
+form .form-control::placeholder {
+    line-height: normal;
+    box-shadow: none;
+}
+
+// Breadcrumbs
+
+// scss-docs-start breadcrumb-variables
+$breadcrumb-font-size: 14px;
+$breadcrumb-padding-y: 0 !default;
+$breadcrumb-padding-x: 0 !default;
+$breadcrumb-item-padding-x: 0;
+$breadcrumb-margin-bottom: 55px;
+$breadcrumb-bg: null !default;
+$breadcrumb-divider-color: $dark;
+$breadcrumb-active-color: $dark;
+$breadcrumb-divider: quote("/") !default;
+// $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
+$breadcrumb-border-radius: null !default;
+// scss-docs-end breadcrumb-variables
+
+nav .breadcrumb {
+    display: none;
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    nav .breadcrumb {
+        display: flex;
+    }
+}
+
+.breadcrumb-item>a {
+    color: rgba(49, 45, 45, 0.5);
+}
+
+// setting up the grid
+$grid-gutter-width: 1.25rem;
+
+// custom styles
+$body-color: #312D2D;
+$font-family-base: 'Montserrat', sans-serif;
+$navbar-brand-padding-y: 0;
+$container-padding-x: 0;
+$paragraph-margin-bottom: 0;
+$dropdown-border-radius: 0;
+$dropdown-min-width: 11.5625rem;
+$h2-font-size: 64px !important;
+
+$spacer: 1rem;
+
+// card
+$card-spacer-y: null;
+$card-spacer-x: null;
+$card-title-spacer-y: 7px;
+$card-title-color: null !default;
+$card-subtitle-color: null !default;
+$card-border-width: none;
+$card-border-color: none;
+$card-border-radius: none;
+$card-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+$card-inner-border-radius: none;
+$card-cap-padding-y: 100px;
+$card-cap-padding-x: $card-spacer-x !default;
+$card-cap-bg: null;
+$card-cap-color: null !default;
+$card-height: 585px;
+$card-color: null !default;
+$card-bg: #FAFAFA;
+$card-img-overlay-padding: $spacer !default;
+$card-group-margin: $grid-gutter-width * .5 !default;
+
+// card
+.card {
+    background: #FAFAFA;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card .card-body {
+    padding: 19px 24px 30px;
+    line-height: normal;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.72px;
+}
+
+.card-text {
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0.63px;
+    margin-bottom: 30px;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.72px;
+    margin-bottom: 35px;
+}
+
+// btn
+$btn-padding-y: 15px;
+$btn-padding-x: 41px;
+$btn-font-family: 'Montserrat', sans-serif;
+$btn-font-size: 16px;
+$btn-line-height: normal;
+$btn-border-width: 1px;
+$btn-font-weight: 400;
+$btn-box-shadow: none;
+$btn-border-radius: 0;
+
+
+.btn {
+    text-align: center;
+}
+
+.btn-dark {
+    border: none;
+}
+
+.btn:hover {
+    --bs-btn-hover-bg: #312D2D;
+    --bs-btn-hover-border-color: #312D2D;
+    opacity: .7;
+    --bs-btn-focus-shadow-rgb: none;
+}
+
+.btn:active {
+    --bs-btn-active-bg: #312D2D;
+    --bs-btn-active-shadow: none;
+    opacity: 0.7;
+}
+
+
+
+
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    n: $spacer * 5.375,
+    ftop: 24px,
+    fbottom: 77px,
+    fbetween: 96px,
+    fdtop: 45px,
+    fdbottom: 136px,
+    ddt: 20px,
+    ddb: 27px,
+    card: 30px,
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 358px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-max-widths: (
+    xs: 358px,
+    sm: 360px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px,
+);
+
+$font-sizes: (
+    1: 14px,
+    2: 16px,
+    3: 18px,
+);
+
+$navbar-padding-y: $spacer * 1.5625;
+
+// import bootstrap
+// @import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/bootstrap.scss";
+
+body.d-flex {
+    max-width: 1920px;
+    width: 100%;
+}
+
+.nav-link {
+    color: #312D2D;
+}
+
+footer p:not(:last-child) {
+    margin-bottom: 17px;
+}
+
+.navbar .dropdown-item:not(:last-child) {
+    padding-bottom: .9375rem !important;
+}
+
+header.container-fluid {
+    border-bottom: 1px solid rgba(49, 45, 45, 0.5);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-yellow:visited,
+.btn-yellow:focus,
+.btn-yellow:hover,
+.btn.btn-yellow:active {
+    color: #FFF;
+    background-color: #E1BE5F;
+    opacity: 0.7;
+}

@@ -1,0 +1,112 @@
+.breadcrumb {
+    margin-top: 41px;
+    margin-bottom: 55px;
+}
+
+.breadcrumb-item.active::before {
+    color: #312D2D;
+    opacity: 0.5;
+}
+
+.info {
+    padding: 0;
+    padding-left: 40px;
+}
+
+main>div:nth-child(2 of div.container) {
+    margin-bottom: 114px;
+}
+
+main>div:nth-child(2 of div.container) .btn-yellow {
+    color: #FFF;
+    padding: 15px 48px;
+}
+
+main>div:nth-child(3 of div.container) {
+    margin-bottom: 110px;
+}
+
+main>div:nth-child(3 of div.container) .h5 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.08px;
+    margin-bottom: 51px;
+}
+
+.h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.info-1 {
+    margin-bottom: 52px;
+}
+
+.info-1 .h3 {
+    letter-spacing: 1.8px;
+}
+
+.info-1 p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info-2 {
+    margin-bottom: 20px;
+}
+
+.qty {
+    margin-bottom: 30px;
+    line-height: normal;
+}
+
+.qty>span:first-child {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.qty>span:last-child {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 1;
+}
+
+.h5 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.property {
+    margin-bottom: 10px;
+    line-height: normal;
+}
+
+.property>span:first-child {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.property>span:first-child {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info-3 {
+    margin-bottom: 38px;
+}

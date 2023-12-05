@@ -1,0 +1,137 @@
+nav .breadcrumb {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 64px;
+}
+
+.btn {
+    color: #FFF;
+    padding-right: 48px;
+    padding-left: 48px;
+}
+
+.h3 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    margin-bottom: 63px;
+}
+
+.h5 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 90px;
+}
+
+form label {
+    color: #312D2D;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+form textarea#comment {
+    padding: 0;
+    width: 100%;
+    border: 0.5px solid rgba(49, 45, 45, 0.5);
+    background: #FFF;
+    margin-bottom: 60px;
+}
+
+form:first-child input {
+    margin-bottom: 42px;
+    padding: 0;
+}
+
+.col-12:last-of-type {
+    margin-bottom: 90px;
+}
+
+.cheque {
+    padding: 25px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cheque .row {
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cheque>.row * {
+    display: inline;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.cheque>div:nth-child(1 of div.row) {
+    margin-bottom: 60px;
+}
+
+.cheque>div:nth-child(n + 2 of div.row) {
+    margin-bottom: 20px;
+}
+
+.cheque hr {
+    width: 226px;
+    height: 1px;
+    opacity: .5;
+    margin: 60px auto 36px auto;
+}
+
+.cheque h5 {
+    color: #312D2D;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.cheque a {
+    color: #312D2D;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.cheque p {
+    font-size: 14px;
+    line-height: normal;
+}
+
+@media screen and (min-width: 768px) {
+    nav .breadcrumb {
+        margin-top: 41px;
+        margin-bottom: 80px;
+    }
+
+    main>div:nth-child(2 of div.container)>.row {
+        margin-bottom: 154px;
+    }
+
+    form {
+        margin: 0;
+    }
+
+    .cheque {
+        margin-top: 128px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+}
