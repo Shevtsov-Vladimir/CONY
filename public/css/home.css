@@ -13,6 +13,13 @@
     line-height: normal;
 }
 
+@media screen and (min-width: 1920px) {
+    #CTA {
+        padding-left: calc(50% - 585px);
+        padding-right: calc(50% - 628px);
+    }
+}
+
 .cta [class|="col"] {
     padding: 0;
 }

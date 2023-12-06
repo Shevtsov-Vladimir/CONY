@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div id="CTA" class="container-fluid d-flex align-items-center">
+    <header id="CTA" class="container-fluid d-flex align-items-center">
         <div class="cta flex-shrink-1">
             <div class="row align-items-center flex-nowrap">
                 <div class="col-auto flex-md-shrink-1">
@@ -25,7 +25,7 @@
 
 
         </div>
-    </div>
+    </header>
 
     <div class="container">
         <div class="row align-items-xl-center justify-content-xl-between flex-xl-nowrap">
@@ -115,7 +115,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="faq" class="container">
         <h2 class="h2">FAQ</h2>
 
         <div class="row">

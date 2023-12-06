@@ -27,9 +27,9 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav gap-n row-gap-3">
                             <a class="nav-link mt-4 mt-lg-0 fs-3" href="{{ route('catalog') }}">Каталог</a>
-                            <a class="nav-link fs-3" href="#">Доставка</a>
+                            <a class="nav-link fs-3" href="{{ route('home') . '#faq'}}">FAQ</a>
                             @guest()
-                                <a class="nav-link fw-bold fs-3" href="#">Вход</a>
+                                <a class="nav-link fw-bold fs-3" href="{{ route('sign_in') }}">Вход</a>
                             @endguest
                             @auth()
                                 <li class="nav-item dropdown">
@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <main class="container  flex-grow-1">
+    <main class="container-fluid  flex-grow-1">
         @yield('content')
     </main>
 

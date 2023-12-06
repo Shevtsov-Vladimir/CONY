@@ -15116,7 +15116,7 @@ footer p:not(:last-child) {
   padding-bottom: 0.9375rem !important;
 }
 
-header.container-fluid, header.container-xs, header.container-sm, header.container-md, header.container-lg, header.container-xl {
+nav.navbar {
   border-bottom: 1px solid rgba(49, 45, 45, 0.5);
 }
 
