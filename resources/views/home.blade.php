@@ -138,6 +138,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="accordion-item">
                         <h4 class="accordion-header">
                             <button class="accordion-button collapsed yellow-heading" type="button"
@@ -153,6 +154,7 @@
                                 body. Let's imagine this being filled with some actual content.</div>
                         </div>
                     </div>
+
                     <div class="accordion-item">
                         <h4 class="accordion-header">
                             <button class="accordion-button collapsed yellow-heading" type="button"
@@ -174,12 +176,12 @@
                     <div class="accordion-item">
                         <h4 class="accordion-header">
                             <button class="accordion-button collapsed yellow-heading" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false"
                                 aria-controls="flush-collapseThree">
                                 Могу ли я вернуть или обменять товар?
                             </button>
                         </h4>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">Placeholder content for this accordion, which is intended to
                                 demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
