@@ -238,11 +238,6 @@ $navbar-padding-y: $spacer * 1.5625;
 // @import "../bootstrap/scss/functions";
 @import "../bootstrap/scss/bootstrap.scss";
 
-body.d-flex {
-    max-width: 1920px;
-    width: 100%;
-}
-
 .nav-link {
     color: #312D2D;
 }

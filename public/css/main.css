@@ -15104,11 +15104,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body.d-flex {
-  max-width: 1920px;
-  width: 100%;
-}
-
 .nav-link {
   color: #312D2D;
 }

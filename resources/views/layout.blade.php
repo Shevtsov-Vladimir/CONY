@@ -10,7 +10,7 @@
     @yield('asset')
 </head>
 
-<body class="d-flex flex-column min-vh-100 m-auto">
+<body class="d-flex flex-column min-vh-100">
 
     <header class="container-fluid ">
         <div class="container">
@@ -51,7 +51,7 @@
         </div>
     </header>
 
-    <main class="container-fluid  flex-grow-1">
+    <main class="container  flex-grow-1">
         @yield('content')
     </main>
 

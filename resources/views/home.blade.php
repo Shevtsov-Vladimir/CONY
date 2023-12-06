@@ -16,7 +16,7 @@
                     <p>Уважаемые покупатели, обращаем внимание, что скидка может действовать на определенные размеры
                         изделий.</p>
 
-                    <a href="{{ route('catalog') }}" class="btn btn-yellow">Перейти в каталог</a>
+                    <a href="{{ route('catalog_open') }}" class="btn btn-yellow">Перейти в каталог</a>
                 </div>
                 <div class="col-auto flex-shrink-1">
                     <img class="img-fluid" src="{{ asset('/img/подвеска4.png') }}" alt="Подвеска">
