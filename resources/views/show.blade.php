@@ -8,8 +8,8 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                <li class="breadcrumb-item active"><a href="#">Каталог</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">Главная</a></li>
+                <li class="breadcrumb-item active"><a href="{{ route('catalog') }}">Каталог</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Браслет 1</li>
             </ol>
         </nav>
