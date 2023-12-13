@@ -25,7 +25,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                        <div class="navbar-nav gap-n row-gap-3">
+                        <div class="navbar-nav gap-n row-gap-3 text-end">
                             <a class="nav-link mt-4 mt-lg-0 fs-3" href="{{ route('catalog') }}">Каталог</a>
                             <a class="nav-link fs-3" href="{{ route('home') . '#faq'}}">FAQ</a>
                             @guest()
