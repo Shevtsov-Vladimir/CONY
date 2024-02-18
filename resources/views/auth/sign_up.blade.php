@@ -16,21 +16,26 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-12 col-md-5">
-                <form action="#">
+                <form action="{{route("auth.store")}}" method="POST">
+                    @csrf
+
                     <h3 class="h3">Регистрация</h3>
 
+                    <input class="form-control" placeholder="Введите имя" type="text" name="name">
+                    <input class="form-control" placeholder="Введите фамилию" type="text" name="surname">
+                    <input class="form-control" placeholder="Введите отчество" type="text" name="patronymic">
                     <input class="form-control" placeholder="Укажите ваш E-mail" type="email" name="email">
                     <input class="form-control" placeholder="Укажите ваш телефон" type="tel" name="telephone">
                     <input class="form-control" placeholder="Придумайте пароль" type="password" name="password">
                     <input class="form-control" placeholder="Повторите пароль" type="password" name="password_confirmation">
 
 
-                    <button type="submit" class="btn btn-dark">Зарегистрироваться</button>
+                    <button type="submit" class="btn btn-yellow">Зарегистрироваться</button>
                 </form>
             </div>
 
 
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
                 <div class="qa">
                     <h5 class="h5">Зачем нужна регистрация?</h5>
 

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +16,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $products = Product::orderBy('created_at')->limit(3)->get();
+    return view('home', ['products' => $products]);
 })->name('home');
 
-Route::get('/sign_in', function () {
-    return view('sign_in');
-})->name('sign_in');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/logout', [RegisterController::class, 'logout'])->name('auth.logout');
+});
 
-Route::get('/sign_up', function () {
-    return view('sign_up');
-})->name('sign_up');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/signup', [RegisterController::class, 'signUp'])->name('auth.sign_up');
+    Route::post('/signup', [RegisterController::class, 'store'])->name('auth.store');
+
+    Route::get('/login', [RegisterController::class, 'loginform'])->name('auth.loginform');
+    Route::post('/login', [RegisterController::class, 'login'])->name('auth.login');
+});
+
+Route::middleware(['admin'])->group(function () {
+    Route::view('/admin', 'admin.layout');
+});
 
 Route::get('catalog', function () {
     return view('catalog');

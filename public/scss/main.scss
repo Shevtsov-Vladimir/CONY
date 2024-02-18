@@ -12,7 +12,7 @@ $theme-colors: (
 $navbar-light-toggler-icon-bg: url('/img/Menu.svg');
 $navbar-dark-toggler-icon-bg: url('/img/Menu.svg');
 $navbar-light-toggler-border-color: #FFF;
-$navbar-dark-toggler-border-color:  #FFF;
+$navbar-dark-toggler-border-color: #FFF;
 
 
 // scss-docs-start form-input-variables
@@ -53,7 +53,7 @@ form .form-control:focus {
 }
 
 form .form-control::placeholder {
-    line-height: normal;
+    line-height: 17.07px;
     box-shadow: none;
 }
 
@@ -76,6 +76,7 @@ $breadcrumb-border-radius: null !default;
 nav .breadcrumb {
     display: none;
     margin-top: 40px;
+    line-height: 17.07px;
 }
 
 @media screen and (min-width: 768px) {
@@ -258,10 +259,15 @@ a {
     text-decoration: none;
 }
 
-.btn-yellow:visited,
-.btn-yellow:focus,
-.btn-yellow:hover,
-.btn.btn-yellow:active {
+.btn-yellow {
+    color: #FFF;
+    background-color: #E1BE5F;
+}
+
+.btn.btn-yellow:hover,
+.btn.btn-yellow:focus,
+.btn.btn.btn-yellow:active,
+.btn.btn-yellow:visited {
     color: #FFF;
     background-color: #E1BE5F;
     opacity: 0.7;

@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg m-auto">
                 <div class="container-fluid ">
-                    <a class="navbar-brand justify-content-start" href="{{ route('home') }}">
+                    {{-- <a class="navbar-brand justify-content-start" href="{{ route('home') }}"> --}}
                         <img class=img-fluid src="{{ asset('/img/logo.svg') }}" alt="Logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -26,10 +26,10 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav gap-n row-gap-3 text-end">
-                            <a class="nav-link mt-4 mt-lg-0 fs-3" href="{{ route('catalog') }}">Каталог</a>
-                            <a class="nav-link fs-3" href="{{ route('home') . '#faq'}}">FAQ</a>
+                            {{-- <a class="nav-link mt-4 mt-lg-0 fs-3" href="{{ route('catalog') }}">Каталог</a> --}}
+                            {{-- <a class="nav-link fs-3" href="{{ route('home') . '#faq'}}">FAQ</a> --}}
                             @guest()
-                                <a class="nav-link fw-bold fs-3" href="{{ route('auth.loginform') }}">Вход</a>
+                                {{-- <a class="nav-link fw-bold fs-3" href="{{ route('auth.loginform') }}">Вход</a> --}}
                             @endguest
                             @auth()
                                 <li class="nav-item dropdown">
@@ -43,7 +43,7 @@
                                     </ul>
                                 </li>
                                 <a class="nav-link fw-bold fs-3" href="#">Личный кабинет</a>
-                                <a class="nav-link fw-bold fs-3" href="{{ route('auth.logout') }}">Выход</a>
+                                {{-- <a class="nav-link fw-bold fs-3" href="{{ route('auth.logout') }}">Выход</a> --}}
                             @endauth
                         </div>
                     </div>

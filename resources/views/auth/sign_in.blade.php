@@ -16,25 +16,30 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-12 col-md-5">
-                <form action="#">
+                <form action="{{ route('auth.login') }}" method="POST">
+                    @csrf
+
                     <h3 class="h3">Вход</h3>
 
-                    <input class="form-control" placeholder="Введите ваш Логин или E-mail" type="text" name="nickname">
+                    <input class="form-control" placeholder="Введите ваш E-mail" type="email" name="email"
+                        value="{{ old('email') }}" required>
                     <input class="form-control" placeholder="Пароль" type="password" name="password">
 
-                    <button type="submit" class="btn btn-dark">Войти</button>
+                    <button type="submit" class="btn btn-yellow">Войти</button>
                 </form>
             </div>
 
 
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
                 <div class="cta-reg">
                     <h5 class="h5">Я – новый покупатель</h5>
 
-                    <p>Регистрация на сайте позволит быстро оформлять заказы, управлять заказами через личный кабинет, в
-                        полном объеме использовать возможности нашего интернет магазина.</p>
+                    <p>
+                        Регистрация на сайте позволит быстро оформлять заказы, управлять заказами через личный кабинет, в
+                        полном объеме использовать возможности нашего интернет магазина.
+                    </p>
 
-                    <a href="{{ route('sign_up') }}">Зарегистрироваться</a>
+                    <a href="{{ route('auth.sign_up') }}">Зарегистрироваться</a>
                 </div>
             </div>
         </div>
