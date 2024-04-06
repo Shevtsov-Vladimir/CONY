@@ -1,22 +1,22 @@
 // import the Montserrat font
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
-$dark: #312D2D;
-$yellow: #E1BE5F;
+$spacer: 1rem;
+$dark: #312d2d;
+$yellow: #e1be5f;
 
 $theme-colors: (
     "yellow": $yellow,
-    "dark": $dark
+    "dark": $dark,
 );
 
-$navbar-light-toggler-icon-bg: url('/img/Menu.svg');
-$navbar-dark-toggler-icon-bg: url('/img/Menu.svg');
-$navbar-light-toggler-border-color: #FFF;
-$navbar-dark-toggler-border-color: #FFF;
-
+$navbar-light-toggler-icon-bg: url("/img/Menu.svg");
+$navbar-dark-toggler-icon-bg: url("/img/Menu.svg");
+$navbar-light-toggler-border-color: #fff;
+$navbar-dark-toggler-border-color: #fff;
 
 // scss-docs-start form-input-variables
-$input-font-family: 'Montserrat';
+$input-font-family: "Montserrat";
 $input-font-size: 14px;
 $input-font-weight: 400;
 
@@ -85,24 +85,60 @@ nav .breadcrumb {
     }
 }
 
-.breadcrumb-item>a {
+.breadcrumb-item > a {
     color: rgba(49, 45, 45, 0.5);
+}
+
+// Dropdowns
+
+$dropdown-min-width: 11.5625rem;
+$dropdown-padding-x: 0;
+$dropdown-padding-y: 0.5rem;
+$dropdown-spacer: 0.125rem;
+// $dropdown-font-size:                $font-size-base;
+// $dropdown-color:                    var(--#{$prefix}body-color);
+// $dropdown-bg:                       var(--#{$prefix}body-bg);
+// $dropdown-border-color:             var(--#{$prefix}border-color-translucent);
+$dropdown-border-radius: 0;
+$dropdown-border-width:             0;
+// $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}); // stylelint-disable-line function-disallowed-list
+// $dropdown-divider-bg:               $dropdown-border-color;
+// $dropdown-divider-margin-y:         $spacer * .5;
+// $dropdown-box-shadow:               0 0 4px 0 rgba(0, 0, 0, 0.25);
+
+// $dropdown-link-color:               var(--#{$prefix}body-color);
+// $dropdown-link-hover-color:         $dropdown-link-color;
+// $dropdown-link-hover-bg:            var(--#{$prefix}tertiary-bg);
+
+// $dropdown-link-active-color:        $component-active-color;
+$dropdown-link-active-bg:           null;
+
+// $dropdown-link-disabled-color:      var(--#{$prefix}tertiary-color);
+
+// $dropdown-item-padding-y:           $spacer * .25;
+// $dropdown-item-padding-x:           $spacer;
+
+// $dropdown-header-color:             $gray-600;
+// $dropdown-header-padding-x:         $dropdown-item-padding-x;
+// $dropdown-header-padding-y:         $dropdown-padding-y;
+// fusv-disable
+// $dropdown-header-padding:           $dropdown-header-padding-y $dropdown-header-padding-x; // Deprecated in v5.2.0
+// fusv-enable
+
+.dropdown-menu {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
 // setting up the grid
 $grid-gutter-width: 1.25rem;
 
 // custom styles
-$body-color: #312D2D;
-$font-family-base: 'Montserrat', sans-serif;
+$body-color: #312d2d;
+$font-family-base: "Montserrat", sans-serif;
 $navbar-brand-padding-y: 0;
 $container-padding-x: 0;
 $paragraph-margin-bottom: 0;
-$dropdown-border-radius: 0;
-$dropdown-min-width: 11.5625rem;
 $h2-font-size: 64px !important;
-
-$spacer: 1rem;
 
 // card
 $card-spacer-y: null;
@@ -121,13 +157,13 @@ $card-cap-bg: null;
 $card-cap-color: null !default;
 $card-height: 585px;
 $card-color: null !default;
-$card-bg: #FAFAFA;
+$card-bg: #fafafa;
 $card-img-overlay-padding: $spacer !default;
-$card-group-margin: $grid-gutter-width * .5 !default;
+$card-group-margin: $grid-gutter-width * 0.5 !default;
 
 // card
 .card {
-    background: #FAFAFA;
+    background: #fafafa;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -159,14 +195,13 @@ $card-group-margin: $grid-gutter-width * .5 !default;
 // btn
 $btn-padding-y: 15px;
 $btn-padding-x: 41px;
-$btn-font-family: 'Montserrat', sans-serif;
+$btn-font-family: "Montserrat", sans-serif;
 $btn-font-size: 16px;
 $btn-line-height: normal;
 $btn-border-width: 1px;
 $btn-font-weight: 400;
 $btn-box-shadow: none;
 $btn-border-radius: 0;
-
 
 .btn {
     text-align: center;
@@ -177,25 +212,22 @@ $btn-border-radius: 0;
 }
 
 .btn:hover {
-    --bs-btn-hover-bg: #312D2D;
-    --bs-btn-hover-border-color: #312D2D;
-    opacity: .7;
+    --bs-btn-hover-bg: #312d2d;
+    --bs-btn-hover-border-color: #312d2d;
+    opacity: 0.7;
     --bs-btn-focus-shadow-rgb: none;
 }
 
 .btn:active {
-    --bs-btn-active-bg: #312D2D;
+    --bs-btn-active-bg: #312d2d;
     --bs-btn-active-shadow: none;
     opacity: 0.7;
 }
 
-
-
-
 $spacers: (
     0: 0,
-    1: $spacer * .25,
-    2: $spacer * .5,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
     3: $spacer,
     4: $spacer * 1.5,
     5: $spacer * 3,
@@ -240,7 +272,7 @@ $navbar-padding-y: $spacer * 1.5625;
 @import "../bootstrap/scss/bootstrap.scss";
 
 .nav-link {
-    color: #312D2D;
+    color: #312d2d;
 }
 
 footer p:not(:last-child) {
@@ -248,7 +280,7 @@ footer p:not(:last-child) {
 }
 
 .navbar .dropdown-item:not(:last-child) {
-    padding-bottom: .9375rem !important;
+    padding-bottom: 0.9375rem !important;
 }
 
 header.container-fluid {
@@ -260,15 +292,15 @@ a {
 }
 
 .btn-yellow {
-    color: #FFF;
-    background-color: #E1BE5F;
+    color: #fff;
+    background-color: #e1be5f;
 }
 
 .btn.btn-yellow:hover,
 .btn.btn-yellow:focus,
 .btn.btn.btn-yellow:active,
 .btn.btn-yellow:visited {
-    color: #FFF;
-    background-color: #E1BE5F;
+    color: #fff;
+    background-color: #e1be5f;
     opacity: 0.7;
 }

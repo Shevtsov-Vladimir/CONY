@@ -46,7 +46,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $recommendedProducts = Product::limit(3)->get();
+        return view('show', ['product' => $product, 'recommendedProducts' => $recommendedProducts]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 @section('asset')
     <link rel="stylesheet" href="{{ asset('/css/show.css') }}">
+    @routes()
 @endsection
 
 @section('content')
@@ -22,18 +23,18 @@
             </div>
             <div class="col-6 info">
                 <div class="info-1">
-                    <h3 class="h3">Браслет</h3>
-                    <p>Наш браслет изготовлен из эстетичного и модного бижутерного сплава, который придает ему изысканность и стиль. Без вставок и гладкий внешний вид делают его минималистичным и подходящим для любого наряда. Жесткий и широкий дизайн из бижутерии стали придает этому аксессуару долговечность и привлекательность. Этот браслет станет прекрасным подарком для вашей любимой, добавив ее образу неповторимый шарм и стиль.</p>
+                    <h3 class="h3">{{ $product->title }}</h3>
+                    <p>{{ $product->description . '...' }}</p>
                 </div>
                 <div class="info-2">
-                    <h3 class="h3">550.00 руб.</h3>
+                    <h3 class="h3">{{ $product->price }}.00 руб.</h3>
                     <div class="d-flex justify-content-between">
                         <a href="#" class="btn btn-yellow">В корзину</a>
                         <a href="#" class="btn btn-outline-dark">Купить сейчас</a>
                     </div>
                 </div>
                 <div class="info-3">
-                    <p class="qty"><span>Штук в наличии:</span><span> 111</span></p>
+                    <p class="qty"><span>Штук в наличии:</span><span> {{ $product->quantity }}</span></p>
 
                     <h5 class="h5">Дополнительная информация</h5>
 
@@ -59,59 +60,31 @@
         </h5>
 
         <div class="container">
-            <div class="row gy-card">
+            <div id="card" class="row gy-card">
 
-                <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
-                    <div class="card" style="width: 339px;">
-                        <img src="{{ asset('/img/колье-1.png') }}" class="card-img-top" alt="Колье">
-                        <div class="card-body">
-                            <h5 class="card-title">Колье</h5>
-                            <p class="card-text">Представляем вам колье женское на шею..</p>
-                            <p class="card-price">800.00&nbsp;руб.</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-outline-dark">Подробнее</a>
-                                <a href="#">
-                                    <img src="{{ asset('/img/Add Shopping Cart.jpg') }}" alt="Колье" class="img-fluid">
-                                </a>
+                @foreach ($recommendedProducts as $product)
+                    <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
+                        <div class="card" style="width: 339px;">
+                            <img src="{{ asset($product->photo) }}" class="card-img-top" alt="{{ $product->title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->title }}</h5>
+                                <p class="card-text">{{ mb_substr($product->description, 0, 57) . '...' }}</p>
+                                <p class="card-price">{{ $product->price }}.00&nbsp;руб.</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="{{ route('show', ['product' => $product]) }}"
+                                        class="btn btn-outline-dark">Подробнее</a>
+                                    <add-to-cart-icon product-id="{{ $product->id }}" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
-                    <div class="card" style="width: 339px;">
-                        <img src="{{ asset('/img/подвеска-1.png') }}" class="card-img-top" alt="Колье">
-                        <div class="card-body">
-                            <h5 class="card-title">Подвеска бижутерная на&nbsp;шею</h5>
-                            <p class="card-text">Подвеска с пиромидкой имеет универсальный дизайн, который..</p>
-                            <p class="card-price">500.00&nbsp;руб.</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-outline-dark">Подробнее</a>
-                                <a href="#">
-                                    <img src="{{ asset('/img/Add Shopping Cart.jpg') }}" alt="Колье" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
-                    <div class="card" style="width: 339px;">
-                        <img src="{{ asset('/img/Серьги-1.png') }}" class="card-img-top" alt="Колье">
-                        <div class="card-body">
-                            <h5 class="card-title">Серьги висячие гвоздики</h5>
-                            <p class="card-text">Серьги в форме лепестка из бижутерного сплава – оригинальный..</p>
-                            <p class="card-price">600.00&nbsp;руб.</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-outline-dark">Подробнее</a>
-                                <a href="#">
-                                    <img src="{{ asset('/img/Add Shopping Cart.jpg') }}" alt="Колье" class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/cartIcon.js') }}"></script>
+@endpush

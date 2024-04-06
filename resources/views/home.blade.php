@@ -2,6 +2,7 @@
 
 @section('asset')
     <link rel="stylesheet" href="{{ asset('/css/home.css') }}">
+    @routes
 @endsection
 
 
@@ -16,7 +17,7 @@
                     <p>Уважаемые покупатели, обращаем внимание, что скидка может действовать на определенные размеры
                         изделий.</p>
 
-                    <a href="{{ route('catalog_open') }}" class="btn btn-yellow">Перейти в каталог</a>
+                    <a href="{{ route('catalog') }}" class="btn btn-yellow">Перейти в каталог</a>
                 </div>
                 <div class="col-auto flex-shrink-1">
                     <img class="img-fluid" src="{{ asset('/img/подвеска4.png') }}" alt="Подвеска">
@@ -52,7 +53,7 @@
         <h3 class="h3">Рекомендации</h3>
 
 
-        <div class="row gy-card">
+        <div id="card" class="row gy-card">
 
             @foreach ($products as $product)
                 <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
@@ -63,11 +64,9 @@
                             <p class="card-text">{{ mb_substr($product->description, 0, 57) . '...' }}</p>
                             <p class="card-price">{{ $product->price }}.00&nbsp;руб.</p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-outline-dark">Подробнее</a>
-                                <a href="#">
-                                    <img src="{{ asset('/img/Add Shopping Cart.jpg') }}" alt="{{ $product->title }}"
-                                        class="img-fluid">
-                                </a>
+                                <a href="{{ route('show', ['product' => $product]) }}"
+                                    class="btn btn-outline-dark">Подробнее</a>
+                                <add-to-cart-icon product-id="{{ $product->id }}" />
                             </div>
                         </div>
                     </div>
@@ -116,9 +115,11 @@
                         </h4>
                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion
-                                body. Let's imagine this being filled with some actual content.</div>
+                            <div class="accordion-body">
+                                Наши сроки доставки составляют от 1 до 7 рабочих дней, однако, следует отметить,
+                                что в связи с различными факторами, такими как праздничные дни, погодные условия и т. д.,
+                                сроки доставки могут быть продлены.
+                            </div>
                         </div>
                     </div>
 
@@ -132,11 +133,12 @@
                         </h4>
                         <div id="flush-collapseThree" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
-                                body. Nothing more exciting happening here in terms of content, but just filling up the
-                                space to make it look, at least at first glance, a bit more representative of how this would
-                                look in a real-world application.</div>
+                            <div class="accordion-body">
+                                Размеры универсальные, потому что они выбираются с учетом среднестатистических размеров
+                                людей. Это удобно для потребителей, поскольку универсальные размеры часто подходят
+                                большинству
+                                людей.
+                            </div>
                         </div>
                     </div>
 
@@ -150,11 +152,10 @@
                         </h4>
                         <div id="flush-collapseFour" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
-                                body. Nothing more exciting happening here in terms of content, but just filling up the
-                                space to make it look, at least at first glance, a bit more representative of how this would
-                                look in a real-world application.</div>
+                            <div class="accordion-body">
+                                Если товар был использован, поврежден или изношен после его покупки, увы мы не можем принять
+                                его обратно.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,3 +164,7 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/cartIcon.js') }}"></script>
+@endpush

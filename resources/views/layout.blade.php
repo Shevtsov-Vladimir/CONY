@@ -27,23 +27,22 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav gap-n row-gap-3 text-end">
                             <a class="nav-link mt-4 mt-lg-0 fs-3" href="{{ route('catalog') }}">Каталог</a>
-                            <a class="nav-link fs-3" href="{{ route('home') . '#faq'}}">FAQ</a>
+                            <a class="nav-link fs-3" href="{{ route('home') . '#faq' }}">FAQ</a>
                             @guest()
-                                <a class="nav-link fw-bold fs-3" href="{{ route('auth.loginform') }}">Вход</a>
+                                <a class="nav-link fs-3" href="{{ route('auth.loginform') }}">Вход</a>
                             @endguest
                             @auth()
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link fs-3" href="#" role="button" data-bs-toggle="dropdown"
+                                    <button class="nav-link fs-3" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Личный кабинет
-                                    </a>
+                                    </button>
                                     <ul class="dropdown-menu m-0 pt-ddt pb-ddb">
-                                        <li><a class="dropdown-item fs-1 py-0" href="#">История покупок</a></li>
-                                        <li><a class="dropdown-item fs-1 py-0" href="#">Корзина</a></li>
+                                        <li><a class="dropdown-item fs-1 py-0" href="{{ route('purchase_history') }}">История покупок</a></li>
+                                        <li><a class="dropdown-item fs-1 py-0" href="{{ route('cart') }}">Корзина</a></li>
                                     </ul>
                                 </li>
-                                <a class="nav-link fw-bold fs-3" href="#">Личный кабинет</a>
-                                <a class="nav-link fw-bold fs-3" href="{{ route('auth.logout') }}">Выход</a>
+                                <a class="nav-link fs-3" href="{{ route('auth.logout') }}">Выход</a>
                             @endauth
                         </div>
                     </div>
@@ -64,15 +63,16 @@
             </div>
 
             <div class="text-white justify-content-end">
-                <p class="fw-bold">&copy;&nbsp;2023&nbsp;CONY</p>
+                <p class="fw-bold">&copy;&nbsp;{{ date('Y') }}&nbsp;CONY</p>
                 <p class="fs-1">Используя данный сайт, вы&nbsp;автоматически<br>принимаете условия пользовательского
                     соглашения<br>и&nbsp;соглашаетесь с&nbsp;политикой конфиденциальности.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="/js/bootstrap.bundle.min.js"></script> --}}
+    @stack('script')
+    {{-- <script src="/js/bootstrap.js"></script> --}}
 </body>
 
 </html>
