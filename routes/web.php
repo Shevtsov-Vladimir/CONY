@@ -3,8 +3,10 @@
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,14 @@ Route::get('/products/{product}', [ProductController::class, "show"])->name('sho
 Route::middleware(['auth'])->group(function() {
     Route::post('/order/store', [OrderController::class, "store"])->name('order.store');
     Route::get('/logout', [RegisterController::class, 'logout'])->name('auth.logout');
+
+    Route::get('/purchase_history', function () {
+        // Order::first()->products()->dd();
+        $orders = Order::with('products')->get();
+        // dd($orders[0]->products);
+        // $orders = Product::with('orders')->get();
+        return view('purchase_history', ['orders' => $orders]);
+    })->name('purchase_history');
 });
 
 Route::middleware(['guest'])->group(function () {   
@@ -53,9 +63,7 @@ Route::get('catalog_open', function () {
 //     return view('show');
 // })->name('show');
 
-Route::get('/purchase_history', function () {
-    return view('purchase_history');
-})->name('purchase_history');
+
 
 Route::get('/cart', function () {
     return view('cart');

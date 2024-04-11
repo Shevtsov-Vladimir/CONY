@@ -1,7 +1,9 @@
 <template>
     <div class="row justify-content-between">
         <div class="col-12 col-md-5">
-            <form ref="form" :action="route('order.store', {orderProductIdAndQuantity: productIdsQuantityList, totalCost: route().params.totalCost})" method="POST">
+            <!-- <form ref="form" :action="route('order.store', {orderProductIdAndQuantity: productIdsQuantityList, totalCost: route().params.totalCost})" method="POST"> -->
+            <form ref="form" :action="route('order.store', {orderProductIdAndQuantity: productIdsQuantityList, delivery_address: delivery_address, orderComemnt: orderComemnt})" method="POST">
+
                 <slot></slot>
                 <!-- <csrf-token-input /> -->
                 <h3 class="h3">Оформление заказа</h3>
@@ -16,6 +18,7 @@
                     placeholder="Введите адрес доставки"
                     type="text"
                     name="delivery_address"
+                    required
                 />
 
                 <!-- <input type="hidden" name="totalCost" value="route().params.totalCost"> -->
@@ -30,6 +33,7 @@
                     id="comment"
                     rows="5"
                     name="orderComment"
+                    required
                 ></textarea>
 
                 <button

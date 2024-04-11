@@ -43,7 +43,7 @@ main>div:nth-child(2 of div.container) .col-12 {
 
 .purchase table {
     text-align: right;
-    display: inline-table;
+    display: inline;
 }
 
 .purchase thead {

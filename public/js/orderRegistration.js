@@ -3128,7 +3128,8 @@ var render = function render() {
     attrs: {
       action: _vm.route("order.store", {
         orderProductIdAndQuantity: _vm.productIdsQuantityList,
-        totalCost: _vm.route().params.totalCost
+        delivery_address: _vm.delivery_address,
+        orderComemnt: _vm.orderComemnt
       }),
       method: "POST"
     }
@@ -3145,7 +3146,8 @@ var render = function render() {
     attrs: {
       placeholder: "Введите адрес доставки",
       type: "text",
-      name: "delivery_address"
+      name: "delivery_address",
+      required: ""
     },
     domProps: {
       value: _vm.delivery_address
@@ -3172,7 +3174,8 @@ var render = function render() {
     attrs: {
       id: "comment",
       rows: "5",
-      name: "orderComment"
+      name: "orderComment",
+      required: ""
     },
     domProps: {
       value: _vm.orderComemnt
