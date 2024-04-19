@@ -1,11 +1,5 @@
 <template>
     <div>
-        <!-- <div class="row"> -->
-        <!-- <div
-                v-for="(product, index) in products"
-                :key="product.id"
-                class="col-12"
-            > -->
         <div class="purchase">
             <img :src="product.photo" :alt="product.title" class="img-fluid" />
             <table>
@@ -58,13 +52,6 @@
                 </tbody>
             </table>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
-
-        <!-- <div class="container text-end">
-            <p class="cost">Итоговая сумма: {{ totalCost + ".00 руб." }}</p>
-            <a href="#" class="btn btn-yellow">К оформлению</a>
-        </div> -->
     </div>
 </template>
 
@@ -84,20 +71,9 @@ export default {
     mounted() {
         this.getItemQuantityInCart();
         this.calculateTotalProductCost();
-        // this.checkLocalStorage();
-        // this.getProducts();
-        // this.calculateTotalCost();
     },
 
     methods: {
-        // checkLocalStorage() {
-        //     for (let el in localStorage) {
-        //         if (localStorage[el] === "true") {
-        //             this.cartItemsIds.push(el);
-        //         }
-        //     }
-        // },
-
         getItemQuantityInCart() {
             this.cartQuantity = +localStorage.getItem(this.product.id);
         },
@@ -106,13 +82,6 @@ export default {
             this.totalProductCost =
                 this.product.price * +localStorage[this.product.id];
         },
-
-        // calculateTotalCost() {
-        //     for (let el in this.products) {
-        //         this.totalCost += this.products[el].price;
-        //         console.log(this.totalCost)
-        //     }
-        // },
 
         decreaseProductQuantity(id) {
             if (
@@ -132,22 +101,6 @@ export default {
                 this.$parent.calculateTotalCost();
             }
         },
-
-        // deleteFromCart(id) {
-        //     localStorage.removeItem(id);
-        //     this.products.splice(index, 1);
-        // },
-
-        // getProducts() {
-        //     axios
-        //         .get("/api/idSpecifiedArray", {
-        //             params: { cartItemsIds: this.cartItemsIds },
-        //         })
-        //         .then((body) => {
-        //             this.products = body.data;
-        //             this.calculateTotalCost();
-        //         });
-        // },
     },
 };
 </script>

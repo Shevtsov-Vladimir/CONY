@@ -5,7 +5,7 @@ nav .breadcrumb {
 }
 
 .btn {
-    color: #FFF;
+    color: #fff;
     padding-right: 48px;
     padding-left: 48px;
 }
@@ -30,7 +30,7 @@ form {
 }
 
 form label {
-    color: #312D2D;
+    color: #312d2d;
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
@@ -43,13 +43,12 @@ form textarea#comment {
     padding: 0;
     width: 100%;
     border: 0.5px solid rgba(49, 45, 45, 0.5);
-    background: #FFF;
+    background: #fff;
     margin-bottom: 60px;
 }
 
 form:first-child input {
     margin-bottom: 42px;
-    /* padding: 0; */
 }
 
 .col-12:last-of-type {
@@ -58,7 +57,7 @@ form:first-child input {
 
 .cheque {
     padding: 25px;
-    background: #FFF;
+    background: #fff;
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -69,30 +68,30 @@ form:first-child input {
     align-items: center;
 }
 
-.cheque>.row * {
+.cheque > .row * {
     display: inline;
     width: auto;
     margin: 0;
     padding: 0;
 }
 
-.cheque>div:nth-child(1 of div.row) {
+.cheque > div:nth-child(1 of div.row) {
     margin-bottom: 60px;
 }
 
-.cheque>div:nth-child(n + 2 of div.row) {
+.cheque > div:nth-child(n + 2 of div.row) {
     margin-bottom: 20px;
 }
 
 .cheque hr {
     width: 226px;
     height: 1px;
-    opacity: .5;
+    opacity: 0.5;
     margin: 60px auto 36px auto;
 }
 
 .cheque h5 {
-    color: #312D2D;
+    color: #312d2d;
     font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
@@ -101,7 +100,7 @@ form:first-child input {
 }
 
 .cheque a {
-    color: #312D2D;
+    color: #312d2d;
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
@@ -121,7 +120,7 @@ form:first-child input {
         margin-bottom: 188px;
     }
 
-    main>div:nth-child(2 of div.container)>.row {
+    main > div:nth-child(2 of div.container) > .row {
         margin-bottom: 154px;
     }
 
@@ -130,8 +129,6 @@ form:first-child input {
     }
 
     .cheque {
-        /* margin-top: 128px; */
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
     }
-
 }

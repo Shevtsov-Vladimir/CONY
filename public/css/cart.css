@@ -3,11 +3,11 @@ nav .breadcrumb {
     margin-bottom: 60px;
 }
 
-main>div:nth-child(2 of div.container) {
+main > div:nth-child(2 of div.container) {
     margin-bottom: 65px;
 }
 
-main>div:nth-child(2 of div.container) h3 {
+main > div:nth-child(2 of div.container) h3 {
     font-size: 40px;
     font-weight: 700;
     line-height: normal;
@@ -15,11 +15,11 @@ main>div:nth-child(2 of div.container) h3 {
     margin-bottom: 50px;
 }
 
-main>div:nth-child(2 of div.container) .row {
+main > div:nth-child(2 of div.container) .row {
     margin: 0;
 }
 
-main>div:nth-child(2 of div.container) .col-12 {
+main > div:nth-child(2 of div.container) .col-12 {
     padding: 25px 25px 25px 20px;
     margin-bottom: 40px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
@@ -37,7 +37,7 @@ main>div:nth-child(2 of div.container) .col-12 {
     height: 100px;
 }
 
-.purchase .del {    
+.purchase .del {
     margin-left: auto;
 }
 
@@ -47,7 +47,7 @@ main>div:nth-child(2 of div.container) .col-12 {
 }
 
 .purchase thead {
-    color: #312D2D;
+    color: #312d2d;
     font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
@@ -104,7 +104,7 @@ main>div:nth-child(2 of div.container) .col-12 {
 }
 
 .btn-yellow {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Montserrat;
     font-size: 16px;
@@ -125,13 +125,10 @@ main>div:nth-child(2 of div.container) .col-12 {
     min-width: 80px;
     height: 21px;
     margin-left: auto;
-    /* top: 414px; */
-    /* left: 1069px; */
     font-size: 14px;
 
-    border: calc(0.5em/14) solid #312D2D80;
-    /* opacity: 0.5; */
-    color: #312D2D;
+    border: calc(0.5em / 14) solid #312d2d80;
+    color: #312d2d;
     font-family: Montserrat;
     font-weight: 400;
     letter-spacing: 0em;
@@ -144,8 +141,8 @@ main>div:nth-child(2 of div.container) .col-12 {
     padding: 2px 10px;
     min-width: 40px;
     height: 100%;
-    border-left: .5px solid #312D2D80;
-    border-right: .5px solid #312D2D80;
+    border-left: 0.5px solid #312d2d80;
+    border-right: 0.5px solid #312d2d80;
     line-height: 17px;
     letter-spacing: 0em;
     text-align: center;
@@ -159,7 +156,7 @@ main>div:nth-child(2 of div.container) .col-12 {
     height: 100%;
     border: none;
 
-    color: #312D2D;
+    color: #312d2d;
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
@@ -167,13 +164,10 @@ main>div:nth-child(2 of div.container) .col-12 {
     letter-spacing: 0em;
     text-align: center;
 
-
-    /* font: inherit; */
-    /* color: inherit; */
     background-color: transparent;
 }
 
 .product-operation:active {
-    background-color: #312D2D;
+    background-color: #312d2d;
     opacity: 0.7;
 }

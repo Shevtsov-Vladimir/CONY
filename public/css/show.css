@@ -4,7 +4,7 @@
 }
 
 .breadcrumb-item.active::before {
-    color: #312D2D;
+    color: #312d2d;
     opacity: 0.5;
 }
 
@@ -13,20 +13,20 @@
     padding-left: 40px;
 }
 
-main>div:nth-child(2 of div.container) {
+main > div:nth-child(2 of div.container) {
     margin-bottom: 114px;
 }
 
-main>div:nth-child(2 of div.container) .btn-yellow {
-    color: #FFF;
+main > div:nth-child(2 of div.container) .btn-yellow {
+    color: #fff;
     padding: 15px 48px;
 }
 
-main>div:nth-child(3 of div.container) {
+main > div:nth-child(3 of div.container) {
     margin-bottom: 110px;
 }
 
-main>div:nth-child(3 of div.container) .h5 {
+main > div:nth-child(3 of div.container) .h5 {
     font-size: 24px;
     font-weight: 500;
     line-height: normal;
@@ -64,14 +64,14 @@ main>div:nth-child(3 of div.container) .h5 {
     line-height: normal;
 }
 
-.qty>span:first-child {
+.qty > span:first-child {
     font-size: 16px;
     font-weight: 400;
     line-height: normal;
     opacity: 0.5;
 }
 
-.qty>span:last-child {
+.qty > span:last-child {
     color: #000;
     font-size: 16px;
     font-weight: 400;
@@ -92,7 +92,7 @@ main>div:nth-child(3 of div.container) .h5 {
     line-height: normal;
 }
 
-.property>span:first-child {
+.property > span:first-child {
     color: #000;
     font-size: 16px;
     font-weight: 400;
@@ -100,7 +100,7 @@ main>div:nth-child(3 of div.container) .h5 {
     opacity: 0.5;
 }
 
-.property>span:first-child {
+.property > span:first-child {
     color: #000;
     font-size: 16px;
     font-weight: 400;
@@ -109,4 +109,9 @@ main>div:nth-child(3 of div.container) .h5 {
 
 .info-3 {
     margin-bottom: 38px;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
 }

@@ -1,17 +1,19 @@
 <template>
     <div class="row justify-content-between">
         <div class="col-12 col-md-5">
-            <!-- <form ref="form" :action="route('order.store', {orderProductIdAndQuantity: productIdsQuantityList, totalCost: route().params.totalCost})" method="POST"> -->
-            <form ref="form" :action="route('order.store', {orderProductIdAndQuantity: productIdsQuantityList, delivery_address: delivery_address, orderComemnt: orderComemnt})" method="POST">
-
+            <form
+                ref="form"
+                :action="
+                    route('order.store', {
+                        orderProductIdAndQuantity: productIdsQuantityList,
+                        delivery_address: delivery_address,
+                        orderComemnt: orderComemnt,
+                    })
+                "
+                method="POST"
+            >
                 <slot></slot>
-                <!-- <csrf-token-input /> -->
                 <h3 class="h3">Оформление заказа</h3>
-                <!-- 
-                    {{-- <input class="form-control" placeholder="Введите фамилию" type="text" name="surname"> --}}
-                    {{-- <input class="form-control" placeholder="Введите имя" type="text" name="firstname"> --}}
-                    {{-- <input class="form-control" placeholder="Введите отчество" type="text" name="patronymic"> --}}
-                    {{-- <input class="form-control" placeholder="Введите телефон" type="tel" name="telephone"> --}} -->
                 <input
                     v-model="delivery_address"
                     class="form-control"
@@ -20,9 +22,6 @@
                     name="delivery_address"
                     required
                 />
-
-                <!-- <input type="hidden" name="totalCost" value="route().params.totalCost"> -->
-                <!-- <input type="hidden" name="orderProductIdAndQuantity" value="productIdsQuantityList"> -->
 
                 <label for="comment" class="form-label"
                     >Комментарий к заказу</label
@@ -36,10 +35,7 @@
                     required
                 ></textarea>
 
-                <button
-                    @click="submitForm"
-                    class="btn btn-yellow"
-                >
+                <button @click="submitForm" class="btn btn-yellow">
                     Оформить заказ
                 </button>
             </form>
@@ -52,10 +48,9 @@
 </template>
 
 <script>
-// import func from 'vue-editor-bridge';
 import TheCheque from "./TheCheque.vue";
 export default {
-    props: ['userId'],
+    props: ["userId"],
 
     data() {
         return {
@@ -69,7 +64,6 @@ export default {
             const a = {};
 
             const keys = Object.keys(localStorage);
-            // console.log(keys)
             for (let key of keys) {
                 let item = localStorage.getItem(key);
                 item = parseInt(item);
@@ -84,14 +78,10 @@ export default {
         TheCheque,
     },
 
-    mounted() {
-        // this.makeProductIdsList()
-    },
-
     methods: {
         submitForm() {
             localStorage.clear();
-            this.$refs.form.$el.submit()
+            this.$refs.form.$el.submit();
         },
 
         addOrder() {
@@ -114,14 +104,6 @@ export default {
                 .then((res) => {
                     console.log(res);
                 });
-        },
-
-        makeProductIdsList() {
-            for (let key in localStorage) {
-                // this.productIdsList[+key] = +localStorage[key]
-                // console.log(this.productIdsQuantityList);
-                console.log(typeof +localStorage[key]);
-            }
         },
     },
 };

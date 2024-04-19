@@ -1,7 +1,11 @@
 <template>
     <a @click="toggleItemInCart(productId)">
-        <!-- {{ typeof(productId) }} -->
-        <img :src="icon" alt="Добавить товар в корзину" class="img-fluid" />
+        <img
+            :src="icon"
+            alt="Добавить товар в корзину"
+            class="img-fluid"
+            loading="lazy"
+        />
     </a>
 </template>
 
@@ -18,10 +22,10 @@ export default {
     },
 
     mounted() {
-        if (localStorage[this.productId] === "true") {
-            this.icon = "img/addedToCart.svg";
+        if (localStorage[this.productId] > 0) {
+            this.icon = "/img/addedToCart.svg";
         } else {
-            this.icon = "img/addToCart.jpg";
+            this.icon = "/img/addToCart.jpg";
         }
     },
 
@@ -29,10 +33,10 @@ export default {
         toggleItemInCart(id) {
             if (localStorage[id] > 0 && !isNaN(localStorage[id])) {
                 localStorage.removeItem(id);
-                this.icon = "img/addToCart.jpg";
+                this.icon = "/img/addToCart.jpg";
             } else {
                 localStorage[id] = 1;
-                this.icon = "img/addedToCart.svg";
+                this.icon = "/img/addedToCart.svg";
             }
         },
     },

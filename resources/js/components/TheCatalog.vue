@@ -100,8 +100,6 @@
 </template>
 
 <script>
-import Filtering from "./Filtering.vue";
-import CatalogOpenButton from "./CatalogOpenButton.vue";
 import AddToCartIcon from "./AddToCartIcon.vue";
 export default {
     data() {
@@ -118,8 +116,6 @@ export default {
 
     components: {
         AddToCartIcon,
-        Filtering,
-        CatalogOpenButton,
     },
 
     methods: {

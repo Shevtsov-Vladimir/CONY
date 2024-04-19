@@ -3023,11 +3023,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _TheCheque_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TheCheque.vue */ "./resources/js/components/TheCheque.vue");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-// import func from 'vue-editor-bridge';
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['userId'],
+  props: ["userId"],
   data: function data() {
     return {
       delivery_address: "",
@@ -3038,7 +3036,6 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
     productIdsQuantityList: function productIdsQuantityList() {
       var a = {};
       var keys = Object.keys(localStorage);
-      // console.log(keys)
       for (var _i = 0, _keys = keys; _i < _keys.length; _i++) {
         var key = _keys[_i];
         var item = localStorage.getItem(key);
@@ -3050,9 +3047,6 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
   },
   components: {
     TheCheque: _TheCheque_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  mounted: function mounted() {
-    // this.makeProductIdsList()
   },
   methods: {
     submitForm: function submitForm() {
@@ -3070,13 +3064,6 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
       }).then(function (res) {
         console.log(res);
       });
-    },
-    makeProductIdsList: function makeProductIdsList() {
-      for (var key in localStorage) {
-        // this.productIdsList[+key] = +localStorage[key]
-        // console.log(this.productIdsQuantityList);
-        console.log(_typeof(+localStorage[key]));
-      }
     }
   }
 });

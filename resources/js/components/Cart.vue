@@ -10,7 +10,11 @@
 
         <div class="container text-end">
             <p class="cost">Итоговая сумма: {{ totalCost + ".00 руб." }}</p>
-            <a :href="route('order_registration', {totalCost: this.totalCost})" class="btn btn-yellow"
+            <a
+                :href="
+                    route('order_registration', { totalCost: this.totalCost })
+                "
+                class="btn btn-yellow"
                 >К оформлению</a
             >
         </div>
@@ -45,11 +49,9 @@ export default {
                     this.cartItemsIds.push(el);
                 }
             }
-            // console.log(this.cartItemsIds)
         },
 
         getProducts() {
-            // console.log(this.cartItemsIds)
             axios
                 .get("/api/idSpecifiedArray", {
                     params: { cartItemsIds: this.cartItemsIds },
@@ -68,18 +70,6 @@ export default {
                 this.totalCost += product.price * +localStorage[product.id];
             }
         },
-
-        // increaseProductQuantity() {
-        //     // if (this.products[index].quantity > products[index]) {
-        //         this.q++
-        //     // }
-        // },
-
-        // decreaseProductQuantity(id, index) {
-        //     if (this.products[index].quantity > 1) {
-        //         this.q++
-        //     }
-        // },
 
         deleteFromCart(id, index) {
             localStorage.removeItem(id);

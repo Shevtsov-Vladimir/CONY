@@ -3050,11 +3050,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           this.cartItemsIds.push(el);
         }
       }
-      // console.log(this.cartItemsIds)
     },
     getProducts: function getProducts() {
       var _this = this;
-      // console.log(this.cartItemsIds)
       axios.get("/api/idSpecifiedArray", {
         params: {
           cartItemsIds: this.cartItemsIds
@@ -3080,16 +3078,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator.f();
       }
     },
-    // increaseProductQuantity() {
-    //     // if (this.products[index].quantity > products[index]) {
-    //         this.q++
-    //     // }
-    // },
-    // decreaseProductQuantity(id, index) {
-    //     if (this.products[index].quantity > 1) {
-    //         this.q++
-    //     }
-    // },
     deleteFromCart: function deleteFromCart(id, index) {
       localStorage.removeItem(id);
       this.products.splice(index, 1);
@@ -3126,30 +3114,14 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getItemQuantityInCart();
     this.calculateTotalProductCost();
-    // this.checkLocalStorage();
-    // this.getProducts();
-    // this.calculateTotalCost();
   },
   methods: {
-    // checkLocalStorage() {
-    //     for (let el in localStorage) {
-    //         if (localStorage[el] === "true") {
-    //             this.cartItemsIds.push(el);
-    //         }
-    //     }
-    // },
     getItemQuantityInCart: function getItemQuantityInCart() {
       this.cartQuantity = +localStorage.getItem(this.product.id);
     },
     calculateTotalProductCost: function calculateTotalProductCost() {
       this.totalProductCost = this.product.price * +localStorage[this.product.id];
     },
-    // calculateTotalCost() {
-    //     for (let el in this.products) {
-    //         this.totalCost += this.products[el].price;
-    //         console.log(this.totalCost)
-    //     }
-    // },
     decreaseProductQuantity: function decreaseProductQuantity(id) {
       if (this.cartQuantity <= this.product.quantity && this.cartQuantity > 1) {
         localStorage.setItem(id, --this.cartQuantity);
@@ -3163,20 +3135,7 @@ __webpack_require__.r(__webpack_exports__);
         this.calculateTotalProductCost();
         this.$parent.calculateTotalCost();
       }
-    } // deleteFromCart(id) {
-    //     localStorage.removeItem(id);
-    //     this.products.splice(index, 1);
-    // },
-    // getProducts() {
-    //     axios
-    //         .get("/api/idSpecifiedArray", {
-    //             params: { cartItemsIds: this.cartItemsIds },
-    //         })
-    //         .then((body) => {
-    //             this.products = body.data;
-    //             this.calculateTotalCost();
-    //         });
-    // },
+    }
   }
 });
 

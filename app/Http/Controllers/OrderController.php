@@ -40,25 +40,19 @@ class OrderController extends Controller
     {
         // $data = $request;
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-        
-            $totalCost = Product::find(intval($key))->price * $value;
-        // try {
-                $order = Order::create([
-                    // 'user_id' => $request->userId,
-                    'user_id' => Auth::id(),
-                    'delivery_address' => $request->delivery_address,
-                    'orderComemnt' => $request->orderComemnt,
-                    // 'product_id' => intval($key),
-                    'quantity' => $value,
-                    'totalCost' => $totalCost,
-                    'status' => 'Cоздан'
-                ]);
 
-                $order->products()->attach(intval($key));
-            // } catch (Throwable $ex) {
-                // return $ex;
-                // return dd($request->orderProductIdAndQuantity);
-            // }
+            $totalCost = Product::find(intval($key))->price * $value;
+
+            $order = Order::create([
+                'user_id' => Auth::id(),
+                'delivery_address' => $request->delivery_address,
+                'orderComemnt' => $request->orderComemnt,
+                'quantity' => $value,
+                'totalCost' => $totalCost,
+                'status' => 'Cоздан'
+            ]);
+
+            $order->products()->attach(intval($key));
         }
         // dd($order);
         return redirect('purchase_history');
@@ -95,7 +89,10 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->status = $request->status;
+        $order->save();
+
+        return redirect('admin');
     }
 
     /**

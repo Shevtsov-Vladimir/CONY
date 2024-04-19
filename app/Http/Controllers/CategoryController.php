@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,7 +35,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create(['title' => $request->title]);
+
+        return redirect('admin');
     }
 
     /**
@@ -57,7 +59,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     /**
@@ -69,7 +71,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->title = $request->title;
+        $category->save();
+        return redirect('admin');
     }
 
     /**
@@ -80,6 +84,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        foreach($category->products as $product) {
+            $product->delete();
+        }
+        $category->delete();
+
+        return redirect('admin');
     }
 }

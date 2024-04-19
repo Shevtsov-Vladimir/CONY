@@ -38,7 +38,8 @@
                                         Личный кабинет
                                     </button>
                                     <ul class="dropdown-menu m-0 pt-ddt pb-ddb">
-                                        <li><a class="dropdown-item fs-1 py-0" href="{{ route('purchase_history') }}">История покупок</a></li>
+                                        <li><a class="dropdown-item fs-1 py-0"
+                                                href="{{ route('purchase_history') }}">История покупок</a></li>
                                         <li><a class="dropdown-item fs-1 py-0" href="{{ route('cart') }}">Корзина</a></li>
                                     </ul>
                                 </li>
@@ -70,9 +71,7 @@
         </div>
     </footer>
 
-    {{-- <script src="/js/bootstrap.bundle.min.js"></script> --}}
     @stack('script')
-    {{-- <script src="/js/bootstrap.js"></script> --}}
 </body>
 
 </html>

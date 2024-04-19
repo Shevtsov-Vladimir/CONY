@@ -24,9 +24,8 @@
     justify-content: space-between;
 }
 
-
 a.category {
-    color: #312D2D;
+    color: #312d2d;
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
@@ -37,18 +36,18 @@ a.active {
     opacity: 1;
 }
 
-main>div:nth-child(2 of div.container) {
+main > div:nth-child(2 of div.container) {
     margin-bottom: 50px;
 }
 
-main>div:nth-child(2 of div.container) .btn-yellow {
-    color: #FFF;
+main > div:nth-child(2 of div.container) .btn-yellow {
+    color: #fff;
     padding: 15px 48px;
     margin-top: 50px;
 }
 
 .yellow-heading {
-    color: #FFF;
+    color: #fff;
     font-size: 24px;
     font-weight: 500;
     line-height: normal;
@@ -58,16 +57,16 @@ main>div:nth-child(2 of div.container) .btn-yellow {
 .btn-yellow:focus,
 .btn-yellow:hover,
 .btn.btn-yellow:active {
-    background-color: #E1BE5F;
+    background-color: #e1be5f;
     opacity: 0.7;
 }
 
 @media screen and (min-width: 768px) {
-    main>div:nth-child(2 of div.container) .btn-yellow {
+    main > div:nth-child(2 of div.container) .btn-yellow {
         margin-top: 60px;
     }
 
-    main>div:nth-child(2 of div.container) {
+    main > div:nth-child(2 of div.container) {
         margin-bottom: 187px;
     }
 

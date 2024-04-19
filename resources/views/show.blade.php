@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Главная</a></li>
                 <li class="breadcrumb-item active"><a href="{{ route('catalog') }}">Каталог</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Браслет 1</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $product->title }}</li>
             </ol>
         </nav>
     </div>
@@ -19,19 +19,18 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <img src="{{ asset('/img/Group 27.png') }}" alt="Браслет" class="img-fluid">
+                <img src="{{ asset($product->photo) }}" alt="{{ $product->title }}" class="main-image img-fluid">
             </div>
             <div class="col-6 info">
                 <div class="info-1">
                     <h3 class="h3">{{ $product->title }}</h3>
                     <p>{{ $product->description . '...' }}</p>
                 </div>
-                <div class="info-2">
+                <div id="showButtons" class="info-2">
                     <h3 class="h3">{{ $product->price }}.00 руб.</h3>
-                    <div class="d-flex justify-content-between">
-                        <a href="#" class="btn btn-yellow">В корзину</a>
-                        <a href="#" class="btn btn-outline-dark">Купить сейчас</a>
-                    </div>
+
+                    <show-buttons :product-id="{{ $product->id }}"></show-buttons>
+
                 </div>
                 <div class="info-3">
                     <p class="qty"><span>Штук в наличии:</span><span> {{ $product->quantity }}</span></p>
@@ -86,5 +85,6 @@
 @endsection
 
 @push('script')
+    <script src="{{ asset('js/show.js') }}"></script>
     <script src="{{ asset('js/cartIcon.js') }}"></script>
 @endpush

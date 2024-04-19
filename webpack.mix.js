@@ -16,4 +16,6 @@ mix.js('resources/js/cartIcon.js', 'public/js').vue()
 mix.js('resources/js/cheque.js', 'public/js').vue()
 mix.js('resources/js/orderRegistration.js', 'public/js').vue()
 mix.js('resources/js/cart.js', 'public/js').vue()
+mix.js('resources/js/show.js', 'public/js').vue()
+mix.js('resources/js/adminPanel.js', 'public/js').vue()
     // .sass('resources/sass/app.scss', 'public/css');

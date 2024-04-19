@@ -32,6 +32,7 @@ class ProductSeeder extends Seeder
         ['title' => 'Браслет на руку', 'description' => 'Приобретите этот женский браслет на руку и добавьте немного', 'price' => 800, 'quantity' => 10, 'photo' => '/img/Браслет6.png', 'category_id' => 3, 'created_at' => Now(), 'updated_at' => Now()],
         ['title' => 'Браслет на руку', 'description' => 'Браслет женский на руку - это стильное и эстетичное украшение', 'price' => 550, 'quantity' => 10, 'photo' => '/img/Браслет7.png', 'category_id' => 3, 'created_at' => Now(), 'updated_at' => Now()],
         ['title' => 'Колье на шею', 'description' => 'Это эстетичное и модное женское колье с сердцем', 'price' => 800, 'quantity' => 10, 'photo' => '/img/Колье5.png', 'category_id' => 2, 'created_at' => Now(), 'updated_at' => Now()],
+        ['title' => 'Браслет', 'description' => 'Браслет женский на руку - это стильное и эстетичное украшение', 'price' => 550, 'quantity' => 10, 'photo' => '/img/Браслет8.jpg', 'category_id' => 3, 'created_at' => Now(), 'updated_at' => Now()],
      ]);   
     }
 }

@@ -1,7 +1,5 @@
 import Vue from "vue";
 import TheCatalog from "./components/TheCatalog.vue"
-// import CatalogOPenButton from "./components/CatalogOPenButton.vue"
-import CatalogOPenButton from "./components/CatalogOpenButton.vue"
 
 require('./bootstrap');
 

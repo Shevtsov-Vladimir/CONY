@@ -4,12 +4,16 @@
     padding-bottom: 190px;
     padding-left: 19.53125%;
     padding-right: 17.291666667%;
-    background: linear-gradient(238deg, #202022 43.92%, rgba(32, 32, 34, 0.91) 69.15%);
+    background: linear-gradient(
+        238deg,
+        #202022 43.92%,
+        rgba(32, 32, 34, 0.91) 69.15%
+    );
 }
 
 .cta {
     width: 1213px;
-    color: #FFF;
+    color: #fff;
     line-height: normal;
 }
 
@@ -55,8 +59,6 @@
 
 @media screen and (max-width: 768px) {
     #CTA {
-        /* height: 160vw; */
-        /* padding: 0; */
         margin-bottom: 98px;
     }
 
@@ -113,31 +115,29 @@ main p {
     line-height: normal;
 }
 
-main>div:nth-child(1 of div.container) {
+main > div:nth-child(1 of div.container) {
     margin-bottom: 98px;
 }
 
-main>div:nth-child(1 of div.container) [class|="col"] {
+main > div:nth-child(1 of div.container) [class|="col"] {
     padding: 0;
 }
 
-main>div:nth-child(1 of div.container) .about .h2 {
+main > div:nth-child(1 of div.container) .about .h2 {
     display: none;
 }
 
-main>div:nth-child(1 of div.container) .h2 {
+main > div:nth-child(1 of div.container) .h2 {
     margin-bottom: 30px;
     letter-spacing: 2.88px;
 }
 
-
-
 @media screen and (min-width: 1200px) {
-    main>div:nth-child(1 of div.container) .h2 {
+    main > div:nth-child(1 of div.container) .h2 {
         display: none;
     }
 
-    main>div:nth-child(1 of div.container) .about .h2 {
+    main > div:nth-child(1 of div.container) .about .h2 {
         display: block;
     }
 
@@ -146,25 +146,25 @@ main>div:nth-child(1 of div.container) .h2 {
     }
 }
 
-main>div:nth-child(2 of div.container) {
+main > div:nth-child(2 of div.container) {
     margin-bottom: 50px;
 }
 
-main>div:nth-child(2 of div.container) h3 {
+main > div:nth-child(2 of div.container) h3 {
     line-height: normal;
     margin-bottom: 41px;
 }
 
-main>div:nth-child(2 of div.container) h2 {
+main > div:nth-child(2 of div.container) h2 {
     display: none;
 }
 
 @media screen and (min-width: 768px) {
-    main>div:nth-child(2 of div.container) h3 {
+    main > div:nth-child(2 of div.container) h3 {
         display: none;
     }
 
-    main>div:nth-child(2 of div.container) h2 {
+    main > div:nth-child(2 of div.container) h2 {
         display: block;
         line-height: normal;
         margin-bottom: 51px;
@@ -172,20 +172,20 @@ main>div:nth-child(2 of div.container) h2 {
     }
 }
 
-main>div:nth-child(2 of div.container) .btn-yellow {
-    color: #FFF;
+main > div:nth-child(2 of div.container) .btn-yellow {
+    color: #fff;
     padding: 15px 48px;
     margin-top: 50px;
 }
 
-main>div:nth-child(3 of div.container) .h2 {
+main > div:nth-child(3 of div.container) .h2 {
     margin-bottom: 45px;
     line-height: normal;
     text-align: center;
 }
 
 .yellow-heading {
-    color: #E1BE5F;
+    color: #e1be5f;
     font-size: 24px;
     font-weight: 500;
     line-height: normal;
@@ -201,10 +201,10 @@ main>div:nth-child(3 of div.container) .h2 {
 .btn-yellow:focus,
 .btn-yellow:hover,
 .btn.btn-yellow:active {
-    background-color: #E1BE5F;
+    background-color: #e1be5f;
     opacity: 0.7;
 }
 
-main>div:nth-child(3 of div.container) {
+main > div:nth-child(3 of div.container) {
     margin-bottom: 94px;
 }
