@@ -20,7 +20,7 @@ class RegisterController extends Controller
             'surname' => ['regex:/^[А-Яа-я\- ]{1,}$/u', 'required'],
             'patronymic' => ['regex:/^[А-Яа-я\- ]{0,}$/u', 'nullable'],
             'email' => ['email', 'unique:users', 'required'],
-            'telephone' => ['regex:/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/m', 'required'],
+            'telephone' => ['regex:/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/m', 'required'],
             'password' => ['confirmed', 'min:6', 'required'],
         ]);
 
