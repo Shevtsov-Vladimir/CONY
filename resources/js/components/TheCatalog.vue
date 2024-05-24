@@ -78,7 +78,10 @@
                                 class="btn btn-outline-dark"
                                 >Подробнее</a
                             >
-                            <AddToCartIcon :product-id="product.id" />
+                            <AddToCartIcon
+                                v-if="auth"
+                                :product-id="product.id"
+                            />
                         </div>
                     </div>
                 </div>
@@ -116,6 +119,12 @@ export default {
 
     components: {
         AddToCartIcon,
+    },
+
+    computed: {
+        auth() {
+            return window.auth;
+        },
     },
 
     methods: {

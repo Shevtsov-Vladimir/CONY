@@ -66,7 +66,9 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <a href="{{ route('show', ['product' => $product]) }}"
                                     class="btn btn-outline-dark">Подробнее</a>
-                                <add-to-cart-icon product-id="{{ $product->id }}" />
+                                @auth
+                                    <add-to-cart-icon product-id="{{ $product->id }}" />
+                                @endauth
                             </div>
                         </div>
                     </div>

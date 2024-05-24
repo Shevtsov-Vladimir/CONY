@@ -3079,6 +3079,11 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AddToCartIcon: _AddToCartIcon_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  computed: {
+    auth: function auth() {
+      return window.auth;
+    }
+  },
   methods: {
     getProducts: function getProducts(amount) {
       var _this = this;
@@ -3254,11 +3259,11 @@ var render = function render() {
       attrs: {
         href: _vm.route("show", product)
       }
-    }, [_vm._v("Подробнее")]), _vm._v(" "), _c("AddToCartIcon", {
+    }, [_vm._v("Подробнее")]), _vm._v(" "), _vm.auth ? _c("AddToCartIcon", {
       attrs: {
         "product-id": product.id
       }
-    })], 1)])])]);
+    }) : _vm._e()], 1)])])]);
   }), _vm._v(" "), _c("div", {
     staticClass: "row"
   }, [_c("div", {

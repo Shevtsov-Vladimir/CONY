@@ -26,12 +26,13 @@
                     <h3 class="h3">{{ $product->title }}</h3>
                     <p>{{ $product->description . '...' }}</p>
                 </div>
-                <div id="showButtons" class="info-2">
-                    <h3 class="h3">{{ $product->price }}.00 руб.</h3>
+                @auth
+                    <div id="showButtons" class="info-2">
+                        <h3 class="h3">{{ $product->price }}.00 руб.</h3>
 
-                    <show-buttons :product-id="{{ $product->id }}"></show-buttons>
-
-                </div>
+                        <show-buttons :product-id="{{ $product->id }}"></show-buttons>
+                    </div>
+                @endauth
                 <div class="info-3">
                     <p class="qty"><span>Штук в наличии:</span><span> {{ $product->quantity }}</span></p>
 
@@ -72,7 +73,9 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="{{ route('show', ['product' => $product]) }}"
                                         class="btn btn-outline-dark">Подробнее</a>
-                                    <add-to-cart-icon product-id="{{ $product->id }}" />
+                                    @auth
+                                        <add-to-cart-icon product-id="{{ $product->id }}" />
+                                    @endauth
                                 </div>
                             </div>
                         </div>
@@ -85,6 +88,8 @@
 @endsection
 
 @push('script')
-    <script src="{{ asset('js/show.js') }}"></script>
+    @auth
+        <script src="{{ asset('js/show.js') }}"></script>
+    @endauth
     <script src="{{ asset('js/cartIcon.js') }}"></script>
 @endpush
