@@ -44,6 +44,7 @@ class ProductController extends Controller
         }
 
         Product::create([
+            'vendor_code' => $request->vendor_code,
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
@@ -92,6 +93,7 @@ class ProductController extends Controller
             $product->photo = $request->photo;
         }
 
+        $product->vendor_code = $request->vendor_code;
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;

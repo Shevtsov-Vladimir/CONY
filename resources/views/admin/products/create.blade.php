@@ -11,23 +11,27 @@
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="mb-5"><input class="form-control" placeholder="Введите название нового товара" type="text"
-                    name="title" required></div>
+            <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="vendor_code"
+                    value="{{ $product->vendor_code }}" required></div>
 
-            <div class="mb-5"><input class="form-control" placeholder="Введите описание товара" type="text"
-                    name="description" required></div>
-
-            <div class="mb-5"><input class="form-control" placeholder="Введите цену товара" type="number" name="price"
+            <div class="mb-5"><input class="form-control" placeholder="Наименование товара" type="text" name="title"
                     required></div>
 
-            <div class="mb-5"><input class="form-control" placeholder="Укажите количество товара" type="number"
-                    name="quantity" required></div>
+            <div class="mb-5"><input class="form-control" placeholder="Описание товара" type="text" name="description"
+                    required></div>
 
-            <div class="mb-5"><input class="form-control" placeholder="Загрузите фото товара" type="file"
-                    name="photo" required></div>
+            <div class="mb-5"><input class="form-control" placeholder="Цена товара" type="number" name="price"
+                    required></div>
+
+            <div class="mb-5"><input class="form-control" placeholder="Количество товара" type="number" name="quantity"
+                    required></div>
+
+            <div class="mb-5"><input class="form-control" placeholder="Фото товара" type="file" name="photo"
+                    required></div>
 
             <div class="mb-5">
-                <select class="form-select" name="category_id" id="">
+                <label for="select" class="form-label">Категория товара</label>
+                <select class="form-select" name="category_id" id="select">
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
