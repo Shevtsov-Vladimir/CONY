@@ -6,6 +6,13 @@
 
 @section('content')
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Панель администратора</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Страница создания товара</li>
+            </ol>
+        </nav>
+
         <h3 class="h3">Изменение категории {{ $category->title }}</h3>
 
         <form action="{{ route('categories.update', ['category' => $category]) }}" method="POST">

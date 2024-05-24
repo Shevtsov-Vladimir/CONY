@@ -6,11 +6,19 @@
 
 @section('content')
     <div class="container">
-        <h3 class="h3 mb-5">Изменение товара {{ $product->title }}</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Панель администратора</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Страница создания товара</li>
+            </ol>
+        </nav>
+
+        <h3 class="h3 my-5">Изменение товара {{ $product->title }}</h3>
 
         <form action="{{ route('products.update', ['product' => $product]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+
 
             <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="vendor_code"
                     value="{{ $product->vendor_code }}" required></div>

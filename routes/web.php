@@ -53,7 +53,7 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/categories', CategoryController::class);
 
     $order_statuses = ['Создан', 'Принят', 'Отклонён'];
-    Route::view('/admin', 'admin.home', ['products' => Product::all(), 'categories' => Category::all(), 'orders' => Order::all(), 'order_statuses' => $order_statuses]);
+    Route::view('/admin', 'admin.home', ['products' => Product::all(), 'categories' => Category::all(), 'orders' => Order::all(), 'order_statuses' => $order_statuses])->name('admin.home');
 });
 
 
