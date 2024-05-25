@@ -1,5 +1,5 @@
 [class*="col"] {
-    padding: 0;
+    /* padding: 0; */
 }
 
 nav .breadcrumb {
@@ -56,6 +56,10 @@ input:last-of-type {
     line-height: 17.07px;
 }
 
+.info {
+    padding: 0 11px;
+}
+
 @media screen and (min-width: 768px) {
     nav .breadcrumb {
         margin-top: 41px;
@@ -78,5 +82,10 @@ input:last-of-type {
 
     .row {
         margin-bottom: 123px;
+        margin: 0 !important;
+    }
+
+    .info {
+        padding: 0;
     }
 }

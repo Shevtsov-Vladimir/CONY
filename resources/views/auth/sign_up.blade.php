@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-5 info">
                 <form action="{{route("auth.store")}}" method="POST">
                     @csrf
 
@@ -35,7 +35,7 @@
             </div>
 
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 info">
                 <div class="qa">
                     <h5 class="h5">Зачем нужна регистрация?</h5>
 
@@ -46,3 +46,7 @@
 
     </div>
 @endsection
+
+@push('script')
+    <script src="/js/bootstrap.bundle.min.js"></script>
+@endpush

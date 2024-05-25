@@ -55,9 +55,13 @@
     </div>
 
     <div class="container">
-        <h5 class="h5">
-            Рекомендуем посмотреть
-        </h5>
+        <div class="row">
+            <div class="col">
+                <h5 class="h5">
+                    Рекомендуем посмотреть
+                </h5>
+            </div>
+        </div>
 
         <div class="container">
             <div id="card" class="row gy-card">

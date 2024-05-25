@@ -29,8 +29,8 @@ main > div:nth-child(3 of div.container) {
 main > div:nth-child(3 of div.container) .h5 {
     font-size: 24px;
     font-weight: 500;
-    line-height: normal;
-    letter-spacing: 1.08px;
+    line-height: 29.26px;
+    letter-spacing: 4.5%;
     margin-bottom: 51px;
 }
 
@@ -114,4 +114,29 @@ main > div:nth-child(3 of div.container) .h5 {
 .main-image {
     width: 100%;
     height: 100%;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: var(--bs-breadcrumb-divider, "/")
+        /* rtl: var(--bs-breadcrumb-divider, "/") */;
+}
+
+.row > .card {
+    padding: 0;
+}
+
+.vendor-code-block {
+    margin-bottom: 15px;
+}
+
+.vendor-code p {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    text-align: left;
+}
+
+.vendor-code > span:first-child {
+    opacity: 0.5;
 }

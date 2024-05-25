@@ -30,11 +30,11 @@ form {
 }
 
 [class*="col"] {
-    padding: 0;
+    /* padding: 0; */
 }
 
 form input {
-    margin-bottom: 42px;
+    margin-bottom: 41px;
 }
 
 input:last-of-type {
@@ -69,6 +69,10 @@ input:last-of-type {
     text-decoration-line: underline;
 }
 
+.info {
+    padding: 0 11px;
+}
+
 @media screen and (min-width: 768px) {
     nav .breadcrumb {
         margin-top: 41px;
@@ -81,6 +85,7 @@ input:last-of-type {
 
     .row {
         margin-bottom: 123px;
+        margin: 0 !important;
     }
 
     .cta-reg {
@@ -91,5 +96,9 @@ input:last-of-type {
 
     input:last-of-type {
         margin-bottom: 60px;
+    }
+
+    .info {
+        padding: 0f;
     }
 }
