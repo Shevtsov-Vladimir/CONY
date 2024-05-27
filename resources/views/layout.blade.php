@@ -32,7 +32,7 @@
                                 <a class="nav-link fs-3" href="{{ route('auth.loginform') }}">Вход</a>
                             @endguest
                             @auth()
-                                <li class="d-none d-md-block nav-item align-self-end dropdown">
+                                <li class="d-none d-lg-block nav-item align-self-end dropdown">
                                     <button class="nav-link fs-3" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Личный кабинет
@@ -44,10 +44,9 @@
                                     </ul>
                                 </li>
 
-                                <a class="d-block d-md-none nav-link fs-3 py-0"
-                                    href="{{ route('purchase_history') }}">История
+                                <a class="d-block d-lg-none nav-link fs-3" href="{{ route('purchase_history') }}">История
                                     покупок</a>
-                                <a class="d-block d-md-none nav-link fs-3 py-0" href="{{ route('cart') }}">Корзина</a>
+                                <a class="d-block d-lg-none nav-link fs-3" href="{{ route('cart') }}">Корзина</a>
                                 <a class="nav-link fs-3" href="{{ route('auth.logout') }}">Выход</a>
                             @endauth
                         </div>
@@ -76,6 +75,7 @@
         </div>
     </footer>
 
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     @stack('script')
 </body>
 

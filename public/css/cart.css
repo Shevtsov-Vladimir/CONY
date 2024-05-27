@@ -213,4 +213,9 @@ main > div:nth-child(2 of div.container) .col-12 {
     main > div:nth-child(2 of div.container) h3 {
         margin-bottom: 24px;
     }
+
+    nav .breadcrumb {
+        margin-top: 15px;
+        margin-bottom: 64px;
+    }
 }

@@ -121,4 +121,13 @@ main > div:nth-child(2 of div.container) .order .col-12:last-child {
     main > div:nth-child(2 of div.container) {
         margin-bottom: 109px;
     }
+
+    nav .breadcrumb {
+        margin-top: 15px;
+        margin-bottom: 64px;
+    }
+
+    main > div:nth-child(2 of div.container) h3 {
+        margin-bottom: 24px;
+    }
 }

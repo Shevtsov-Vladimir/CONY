@@ -8,9 +8,11 @@
     opacity: 0.5;
 }
 
-.info {
-    padding: 0;
-    padding-left: 40px;
+@media screen and (min-width: 992px) {
+    .info {
+        padding: 0;
+        padding-left: 60px;
+    }
 }
 
 main > div:nth-child(2 of div.container) {
@@ -42,7 +44,8 @@ main > div:nth-child(3 of div.container) .h5 {
 }
 
 .info-1 {
-    margin-bottom: 52px;
+    min-height: 151px;
+    margin-bottom: 30px;
 }
 
 .info-1 .h3 {
@@ -88,8 +91,11 @@ main > div:nth-child(3 of div.container) .h5 {
 }
 
 .property {
-    margin-bottom: 10px;
     line-height: normal;
+}
+
+.property + .property {
+    margin-top: 10px;
 }
 
 .property > span:first-child {
@@ -116,11 +122,6 @@ main > div:nth-child(3 of div.container) .h5 {
     height: 100%;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-    content: var(--bs-breadcrumb-divider, "/")
-        /* rtl: var(--bs-breadcrumb-divider, "/") */;
-}
-
 .row > .card {
     padding: 0;
 }
@@ -129,14 +130,21 @@ main > div:nth-child(3 of div.container) .h5 {
     margin-bottom: 15px;
 }
 
-.vendor-code p {
+p.vendor-code {
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
     line-height: 17.07px;
     text-align: left;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .vendor-code > span:first-child {
     opacity: 0.5;
+}
+
+.show-buttons-block {
+    max-width: 476px;
 }

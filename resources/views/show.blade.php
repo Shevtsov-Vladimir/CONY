@@ -17,13 +17,14 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row m-0">
+            <div class="col-lg mb-lg-0 mb-5 col-12  p-0">
                 <img src="{{ asset($product->photo) }}" alt="{{ $product->title }}" class="main-image img-fluid">
             </div>
-            <div class="col-6 info">
+            <div class="col-lg-6 col-12 info">
                 <div class="info-1">
                     <h3 class="h3">{{ $product->title }}</h3>
+                    <p class="vendor-code"><span>Артикул: </span>{{ $product->vendor_code }}</p>
                     <p>{{ $product->description . '...' }}</p>
                 </div>
                 @auth
@@ -56,7 +57,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col p-0">
                 <h5 class="h5">
                     Рекомендуем посмотреть
                 </h5>
@@ -64,10 +65,10 @@
         </div>
 
         <div class="container">
-            <div id="card" class="row gy-card">
+            <div id="card" class="row m-0 justify-content-md-between gy-card">
 
                 @foreach ($recommendedProducts as $product)
-                    <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
+                    <div class="d-flex justify-content-center d-md-block col-md-auto col-12 p-0">
                         <div class="card" style="width: 339px;">
                             <img src="{{ asset($product->photo) }}" class="card-img-top" alt="{{ $product->title }}">
                             <div class="card-body">

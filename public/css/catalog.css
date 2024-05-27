@@ -3,8 +3,13 @@
     font-weight: 500;
     line-height: normal;
     text-align: center;
-    margin-top: 102px;
+    /* margin-top: 102px; */
     margin-bottom: 60px;
+}
+
+nav .breadcrumb {
+    margin-top: 15px;
+    margin-bottom: 70px;
 }
 
 .category-block {
@@ -88,5 +93,10 @@ main > div:nth-child(2 of div.container) .btn-yellow {
 
     .after-block {
         display: none;
+    }
+
+    nav .breadcrumb {
+        margin-top: 41px;
+        margin-bottom: 55px;
     }
 }

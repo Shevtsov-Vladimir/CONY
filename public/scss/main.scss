@@ -63,8 +63,8 @@ form .form-control::placeholder {
 $breadcrumb-font-size: 14px;
 $breadcrumb-padding-y: 0 !default;
 $breadcrumb-padding-x: 0 !default;
-$breadcrumb-item-padding-x: 0;
-$breadcrumb-margin-bottom: 55px;
+$breadcrumb-item-padding-x: 3.67px;
+$breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: null !default;
 $breadcrumb-divider-color: $dark;
 $breadcrumb-active-color: $dark;
@@ -74,9 +74,7 @@ $breadcrumb-border-radius: null !default;
 // scss-docs-end breadcrumb-variables
 
 nav .breadcrumb {
-    display: none;
-    margin-top: 40px;
-    line-height: 17.07px;
+    line-height: 17px;
 }
 
 @media screen and (min-width: 768px) {
@@ -100,7 +98,7 @@ $dropdown-spacer: 0.125rem;
 // $dropdown-bg:                       var(--#{$prefix}body-bg);
 // $dropdown-border-color:             var(--#{$prefix}border-color-translucent);
 $dropdown-border-radius: 0;
-$dropdown-border-width:             0;
+$dropdown-border-width: 0;
 // $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}); // stylelint-disable-line function-disallowed-list
 // $dropdown-divider-bg:               $dropdown-border-color;
 // $dropdown-divider-margin-y:         $spacer * .5;
@@ -110,8 +108,8 @@ $dropdown-border-width:             0;
 // $dropdown-link-hover-color:         $dropdown-link-color;
 // $dropdown-link-hover-bg:            var(--#{$prefix}tertiary-bg);
 
-$dropdown-link-active-color:        #312D2D;
-$dropdown-link-active-bg:           null;
+$dropdown-link-active-color: #312d2d;
+$dropdown-link-active-bg: null;
 
 // $dropdown-link-disabled-color:      var(--#{$prefix}tertiary-color);
 
@@ -279,8 +277,12 @@ footer p:not(:last-child) {
     margin-bottom: 17px;
 }
 
-.navbar .dropdown-item:not(:last-child) {
-    padding-bottom: 0.9375rem !important;
+.navbar .dropdown-menu li:not(:last-child) .dropdown-item {
+    margin-bottom: 15px;
+}
+
+.navbar .dropdown-item {
+    line-height: 1.215;
 }
 
 header.container-fluid {

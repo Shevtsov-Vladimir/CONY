@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex show-buttons-block justify-content-between">
         <button @click="toggleItemInCart(productId)" class="btn btn-yellow">
             {{ productStatus }}
         </button>
