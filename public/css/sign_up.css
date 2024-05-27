@@ -59,6 +59,24 @@ input:last-of-type {
     padding: 0 11px;
 }
 
+.errors {
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    font-size: .875em;
+    color: var(--bs-form-invalid-color);
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.errors ul {
+    margin: 0;
+}
+
+.errors li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 768px) {
     nav .breadcrumb {
         margin-top: 41px;
@@ -86,5 +104,9 @@ input:last-of-type {
 
     .info {
         padding: 0;
+    }
+
+    form {
+        margin-bottom: 137px;
     }
 }

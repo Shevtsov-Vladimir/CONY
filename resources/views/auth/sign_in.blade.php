@@ -21,9 +21,19 @@
 
                     <h3 class="h3">Вход</h3>
 
+                    @if ($errors->any())
+                        <div class="errors">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <input class="form-control" placeholder="Введите ваш E-mail" type="email" name="email"
                         value="{{ old('email') }}" required>
-                    <input class="form-control" placeholder="Пароль" type="password" name="password">
+                    <input class="form-control" placeholder="Пароль" type="password" name="password" required>
 
                     <button type="submit" class="btn btn-yellow">Войти</button>
                 </form>

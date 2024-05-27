@@ -101,3 +101,21 @@ input:last-of-type {
         padding: 0f;
     }
 }
+
+.errors {
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    font-size: 0.875em;
+    color: var(--bs-form-invalid-color);
+    background-color: pink;
+    border-radius: 10px;
+}
+
+.errors ul {
+    margin: 0;
+}
+
+.errors li:not(:last-child) {
+    margin-bottom: 20px;
+}

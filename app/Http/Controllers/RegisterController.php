@@ -53,8 +53,8 @@ class RegisterController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required'],
-            'password' => ['required'],
+            'email' => ['bail', 'required', 'email'],
+            'password' => ['bail', 'required'],
         ]);
 
         if (Auth::attempt($credentials)) {
@@ -65,6 +65,6 @@ class RegisterController extends Controller
                 return redirect('/')->with('info', 'Вход выполнен!');
             }
         }
-        return back()->withErrors(['Данные не соответствуют!']);
+        return back()->withErrors(['Неверный email или пароль']);
     }
 }

@@ -46,7 +46,6 @@ class OrderController extends Controller
             'user_id' => Auth::id(),
             'delivery_address' => $request->delivery_address,
             'orderComemnt' => $request->orderComemnt,
-            'quantity' => $value,
             'totalCost' => $totalCost,
             'status' => 'Cоздан'
         ]);
