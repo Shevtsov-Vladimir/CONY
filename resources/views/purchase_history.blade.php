@@ -58,7 +58,3 @@
         </div>
     </div>
 @endsection
-
-@push('script')
-    <script src="/js/bootstrap.bundle.min.js"></script>
-@endpush
