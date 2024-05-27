@@ -218,11 +218,11 @@ var render = function render() {
       }
     }
   }, [_vm._v("Кольца")])]), _vm._v(" "), _c("div", {
-    staticClass: "row gy-card"
+    staticClass: "row m-0 justify-content-md-between gy-card"
   }, [_vm._l(_vm.products, function (product) {
     return _c("div", {
       key: product.id,
-      staticClass: "col col-md-6 col-xl-4 d-flex justify-content-center"
+      staticClass: "d-flex justify-content-center d-md-block col-md-auto col-12 p-0"
     }, [_c("div", {
       staticClass: "card",
       staticStyle: {

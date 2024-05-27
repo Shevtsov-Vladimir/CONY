@@ -52,11 +52,11 @@
                 >Кольца</a
             >
         </div>
-        <div class="row gy-card">
+        <div class="row m-0 justify-content-md-between gy-card">
             <div
                 v-for="product in products"
                 :key="product.id"
-                class="col col-md-6 col-xl-4 d-flex justify-content-center"
+                class="d-flex justify-content-center d-md-block col-md-auto col-12 p-0"
             >
                 <div class="card" style="width: 339px">
                     <img

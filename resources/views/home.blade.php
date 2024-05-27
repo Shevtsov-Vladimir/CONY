@@ -27,7 +27,7 @@
     </header>
 
     <div class="container">
-        <div class="row align-items-xl-center justify-content-xl-between flex-xl-nowrap">
+        <div class="row mx-0 align-items-xl-center justify-content-xl-between flex-xl-nowrap">
             <div class="col-auto">
                 <h2 class="h2">О&nbsp;нас</h2>
                 <img class="img-fluid" src="{{ asset('/img/pic.png') }}" alt="About">
@@ -53,10 +53,10 @@
         <h3 class="h3">Рекомендации</h3>
 
 
-        <div id="card" class="row gy-card">
+        <div id="card" class="row m-0 justify-content-md-between gy-card">
 
             @foreach ($products as $product)
-                <div class="col col-md-6 col-xl-4 d-flex justify-content-center">
+                <div class="d-flex justify-content-center d-md-block col-md-auto col-12 p-0">
                     <div class="card" style="width: 339px;">
                         <img src="{{ asset($product->photo) }}" class="card-img-top" alt="{{ $product->title }}">
                         <div class="card-body">
@@ -87,7 +87,7 @@
         <h2 class="h2">FAQ</h2>
 
         <div class="row">
-            <div class="col">
+            <div class="col p-0">
 
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
