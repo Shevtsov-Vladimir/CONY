@@ -4,7 +4,7 @@ nav .breadcrumb {
 }
 
 main > div:nth-child(2 of div.container) {
-    margin-bottom: 65px;
+    margin-bottom: 148px;
 }
 
 main > div:nth-child(2 of div.container) h3 {
@@ -21,14 +21,20 @@ main > div:nth-child(2 of div.container) .row {
 
 main > div:nth-child(2 of div.container) .col-12 {
     padding: 25px 25px 25px 20px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#cart .cart-items {
+    padding: 0;
+}
+
+#cart .cart-items .col-12:last-child {
+    margin-bottom: 65px;
 }
 
 .purchase {
     display: flex;
-    justify-content: space-between;
-    align-items: top;
 }
 
 .purchase .img-fluid {
@@ -63,8 +69,6 @@ main > div:nth-child(2 of div.container) .col-12 {
 
 .purchase tbody {
     margin-top: auto;
-    /* align-content: end; */
-    /* align */
 }
 
 .purchase td {
@@ -74,7 +78,7 @@ main > div:nth-child(2 of div.container) .col-12 {
 
 .purchase th:nth-child(2),
 .purchase td:nth-child(2) {
-    width: 275px;
+    width: 82px;
 }
 
 .purchase th:nth-child(3),
@@ -113,7 +117,7 @@ main > div:nth-child(2 of div.container) .col-12 {
     line-height: normal;
 }
 
-#cartItems .container.text-end {
+#cartItems .container.text-md-end {
     margin-top: 60px;
     margin-bottom: 148px;
 }
@@ -125,6 +129,7 @@ main > div:nth-child(2 of div.container) .col-12 {
     min-width: 80px;
     height: 21px;
     margin-left: auto;
+    padding-left: 0 !important;
     font-size: 14px;
 
     border: calc(0.5em / 14) solid #312d2d80;
@@ -170,4 +175,42 @@ main > div:nth-child(2 of div.container) .col-12 {
 .product-operation:active {
     background-color: #312d2d;
     opacity: 0.7;
+}
+
+.grid {
+    display: grid;
+    row-gap: 28px;
+    grid-template-columns:
+        minmax(1%, 312px) minmax(1%, 234px) minmax(1%, 164px) minmax(1%, 165px)
+        minmax(1%, 150px);
+    grid-template-rows: repeat(2, max-content);
+    line-height: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .grid {
+        row-gap: 0;
+        grid-template-columns: minmax(1%, 197px) 16px;
+        grid-template-rows: max-content 16px max-content 27px max-content;
+    }
+
+    .product-control {
+        margin-left: 0;
+    }
+
+    main > div:nth-child(2 of div.container) .col-12 {
+        margin-bottom: 40px;
+    }
+
+    #cart .cart-items .col-12:last-child {
+        margin-bottom: 50px;
+    }
+
+    main > div:nth-child(2 of div.container) {
+        margin-bottom: 90px;
+    }
+
+    main > div:nth-child(2 of div.container) h3 {
+        margin-bottom: 24px;
+    }
 }

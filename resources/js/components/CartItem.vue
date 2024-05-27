@@ -1,56 +1,54 @@
 <template>
-    <div>
-        <div class="purchase">
-            <img :src="product.photo" :alt="product.title" class="img-fluid" />
-            <table>
-                <thead>
-                    <tr>
-                        <th>{{ product.title }}</th>
-                        <th>Цена</th>
-                        <th>Количество</th>
-                        <th>Стоимость</th>
-                        <th>
-                            <a
-                                @click="
-                                    $parent.deleteFromCart(product.id, index)
-                                "
-                            >
-                                <img
-                                    src="/img/icons8-cross-mark-100 1.svg"
-                                    alt="Удалить"
-                                />
-                            </a>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td>{{ product.price + ".00 руб." }}</td>
-                        <td>
-                            <div class="product-control">
-                                <button
-                                    @click="decreaseProductQuantity(product.id)"
-                                    class="product-operation"
-                                >
-                                    -
-                                </button>
-                                <div class="product-quantity">
-                                    {{ cartQuantity }}
-                                </div>
-                                <button
-                                    @click="increaseProductQuantity(product.id)"
-                                    class="product-operation"
-                                >
-                                    +
-                                </button>
-                            </div>
-                        </td>
-                        <td>{{ totalProductCost + ".00 руб." }}</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="purchase">
+        <a :href="route('show', { id: product.id })"
+            ><img :src="product.photo" :alt="product.title" class="img-fluid"
+        /></a>
+
+        <div class="grid">
+            <div class="fw-bold">{{ product.title }}</div>
+            <div class="d-md-block d-none fw-bold text-end">Цена</div>
+            <div class="d-md-block d-none fw-bold text-end">Количество</div>
+            <div class="d-md-block d-none fw-bold text-end">Стоимость</div>
+            <div class="fw-bold text-end">
+                <a @click="$parent.deleteFromCart(product.id, index)">
+                    <img src="/img/icons8-cross-mark-100 1.svg" alt="Удалить" />
+                </a>
+            </div>
+
+            <div class="d-block d-md-none"></div>
+            <div class="d-block d-md-none"></div>
+
+            <div class="d-md-block d-none">{{ product.vendor_code }}</div>
+            <div class="text-start text-md-end">
+                {{ product.price + ".00 руб." }}
+            </div>
+
+            <div class="d-block d-md-none"></div>
+            <div class="d-block d-md-none"></div>
+            <div class="d-block d-md-none"></div>
+
+            <div class="text-start text-md-end">
+                <div class="product-control">
+                    <button
+                        @click="decreaseProductQuantity(product.id)"
+                        class="product-operation"
+                    >
+                        -
+                    </button>
+                    <div class="product-quantity">
+                        {{ cartQuantity }}
+                    </div>
+                    <button
+                        @click="increaseProductQuantity(product.id)"
+                        class="product-operation"
+                    >
+                        +
+                    </button>
+                </div>
+            </div>
+            <div class="d-md-block d-none text-end">
+                {{ totalProductCost + ".00 руб." }}
+            </div>
         </div>
     </div>
 </template>

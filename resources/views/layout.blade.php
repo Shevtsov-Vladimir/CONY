@@ -32,7 +32,7 @@
                                 <a class="nav-link fs-3" href="{{ route('auth.loginform') }}">Вход</a>
                             @endguest
                             @auth()
-                                <li class="nav-item dropdown">
+                                <li class="d-none d-md-block nav-item align-self-end dropdown">
                                     <button class="nav-link fs-3" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Личный кабинет
@@ -43,6 +43,11 @@
                                         <li><a class="dropdown-item fs-1 py-0" href="{{ route('cart') }}">Корзина</a></li>
                                     </ul>
                                 </li>
+
+                                <a class="d-block d-md-none nav-link fs-3 py-0"
+                                    href="{{ route('purchase_history') }}">История
+                                    покупок</a>
+                                <a class="d-block d-md-none nav-link fs-3 py-0" href="{{ route('cart') }}">Корзина</a>
                                 <a class="nav-link fs-3" href="{{ route('auth.logout') }}">Выход</a>
                             @endauth
                         </div>

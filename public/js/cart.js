@@ -3060,7 +3060,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }).then(function (body) {
         _this.products = body.data;
         _this.calculateTotalCost();
-        console.log(body.data);
       });
     },
     calculateTotalCost: function calculateTotalCost() {
@@ -3158,7 +3157,9 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "row"
-  }, [_vm._l(_vm.products, function (product, index) {
+  }, [_c("div", {
+    staticClass: "cart-items"
+  }, _vm._l(_vm.products, function (product, index) {
     return _c("div", {
       key: product.id,
       staticClass: "col-12"
@@ -3168,8 +3169,8 @@ var render = function render() {
         index: index
       }
     })], 1);
-  }), _vm._v(" "), _c("div", {
-    staticClass: "container text-end"
+  }), 0), _vm._v(" "), _c("div", {
+    staticClass: "container text-center text-md-end"
   }, [_c("p", {
     staticClass: "cost"
   }, [_vm._v("Итоговая сумма: " + _vm._s(_vm.totalCost + ".00 руб."))]), _vm._v(" "), _c("a", {
@@ -3179,7 +3180,7 @@ var render = function render() {
         totalCost: this.totalCost
       })
     }
-  }, [_vm._v("К оформлению")])])], 2);
+  }, [_vm._v("К оформлению")])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -3202,15 +3203,33 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("div", {
+  return _c("div", {
     staticClass: "purchase"
+  }, [_c("a", {
+    attrs: {
+      href: _vm.route("show", {
+        id: _vm.product.id
+      })
+    }
   }, [_c("img", {
     staticClass: "img-fluid",
     attrs: {
       src: _vm.product.photo,
       alt: _vm.product.title
     }
-  }), _vm._v(" "), _c("table", [_c("thead", [_c("tr", [_c("th", [_vm._v(_vm._s(_vm.product.title))]), _vm._v(" "), _c("th", [_vm._v("Цена")]), _vm._v(" "), _c("th", [_vm._v("Количество")]), _vm._v(" "), _c("th", [_vm._v("Стоимость")]), _vm._v(" "), _c("th", [_c("a", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "grid"
+  }, [_c("div", {
+    staticClass: "fw-bold"
+  }, [_vm._v(_vm._s(_vm.product.title))]), _vm._v(" "), _c("div", {
+    staticClass: "d-md-block d-none fw-bold text-end"
+  }, [_vm._v("Цена")]), _vm._v(" "), _c("div", {
+    staticClass: "d-md-block d-none fw-bold text-end"
+  }, [_vm._v("Количество")]), _vm._v(" "), _c("div", {
+    staticClass: "d-md-block d-none fw-bold text-end"
+  }, [_vm._v("Стоимость")]), _vm._v(" "), _c("div", {
+    staticClass: "fw-bold text-end"
+  }, [_c("a", {
     on: {
       click: function click($event) {
         return _vm.$parent.deleteFromCart(_vm.product.id, _vm.index);
@@ -3221,7 +3240,23 @@ var render = function render() {
       src: "/img/icons8-cross-mark-100 1.svg",
       alt: "Удалить"
     }
-  })])])])]), _vm._v(" "), _c("tbody", [_c("tr", [_c("td"), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.product.price + ".00 руб."))]), _vm._v(" "), _c("td", [_c("div", {
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "d-block d-md-none"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "d-block d-md-none"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "d-md-block d-none"
+  }, [_vm._v(_vm._s(_vm.product.vendor_code))]), _vm._v(" "), _c("div", {
+    staticClass: "text-start text-md-end"
+  }, [_vm._v("\n            " + _vm._s(_vm.product.price + ".00 руб.") + "\n        ")]), _vm._v(" "), _c("div", {
+    staticClass: "d-block d-md-none"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "d-block d-md-none"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "d-block d-md-none"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "text-start text-md-end"
+  }, [_c("div", {
     staticClass: "product-control"
   }, [_c("button", {
     staticClass: "product-operation",
@@ -3230,16 +3265,18 @@ var render = function render() {
         return _vm.decreaseProductQuantity(_vm.product.id);
       }
     }
-  }, [_vm._v("\n                                -\n                            ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n                    -\n                ")]), _vm._v(" "), _c("div", {
     staticClass: "product-quantity"
-  }, [_vm._v("\n                                " + _vm._s(_vm.cartQuantity) + "\n                            ")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.cartQuantity) + "\n                ")]), _vm._v(" "), _c("button", {
     staticClass: "product-operation",
     on: {
       click: function click($event) {
         return _vm.increaseProductQuantity(_vm.product.id);
       }
     }
-  }, [_vm._v("\n                                +\n                            ")])])]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.totalProductCost + ".00 руб."))]), _vm._v(" "), _c("td")])])])])]);
+  }, [_vm._v("\n                    +\n                ")])])]), _vm._v(" "), _c("div", {
+    staticClass: "d-md-block d-none text-end"
+  }, [_vm._v("\n            " + _vm._s(_vm.totalProductCost + ".00 руб.") + "\n        ")])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

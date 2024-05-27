@@ -3054,15 +3054,12 @@ __webpack_require__.r(__webpack_exports__);
       this.$refs.form.$el.submit();
     },
     addOrder: function addOrder() {
-      console.log(this.delivery_address, this.orderComemnt, this.productIdsQuantityList, this.userId, route().params.totalCost);
       axios.post("/api/order/store", {
         delivery_address: this.delivery_address,
         orderComemnt: this.orderComemnt,
         userId: this.userId,
         totalCost: route().params.totalCost,
         orderProductIdAndQuantity: this.productIdsQuantityList
-      }).then(function (res) {
-        console.log(res);
       });
     }
   }

@@ -1,14 +1,16 @@
 <template>
     <div class="row">
-        <div
-            v-for="(product, index) in products"
-            :key="product.id"
-            class="col-12"
-        >
-            <CartItem :product="product" :index="index" />
+        <div class="cart-items">
+            <div
+                v-for="(product, index) in products"
+                :key="product.id"
+                class="col-12"
+            >
+                <CartItem :product="product" :index="index" />
+            </div>
         </div>
 
-        <div class="container text-end">
+        <div class="container text-center text-md-end">
             <p class="cost">Итоговая сумма: {{ totalCost + ".00 руб." }}</p>
             <a
                 :href="
@@ -59,7 +61,6 @@ export default {
                 .then((body) => {
                     this.products = body.data;
                     this.calculateTotalCost();
-                    console.log(body.data);
                 });
         },
 

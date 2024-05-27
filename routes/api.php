@@ -27,6 +27,3 @@ Route::get('/products/{amount}', [ProductController::class, "products"])->name("
 Route::get('/filteredProducts/{filter}', [ProductController::class, "filteredProducts"])->name("filteredProducts");
 
 Route::get('/idSpecifiedArray', [ProductController::class, 'getRecordsById']);
-
-Route::middleware(['auth'])->group(function () {
-});

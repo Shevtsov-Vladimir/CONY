@@ -4,7 +4,7 @@ nav .breadcrumb {
 }
 
 main > div:nth-child(2 of div.container) {
-    margin-bottom: 65px;
+    margin-bottom: 145px;
 }
 
 main > div:nth-child(2 of div.container) h3 {
@@ -27,8 +27,6 @@ main > div:nth-child(2 of div.container) .col-12 {
 
 .purchase {
     display: flex;
-    justify-content: space-between;
-    align-items: top;
 }
 
 .purchase .img-fluid {
@@ -88,4 +86,39 @@ main > div:nth-child(2 of div.container) .col-12 {
 .purchase th:nth-child(5),
 .purchase td:nth-child(5) {
     width: 173px;
+}
+
+.grid {
+    display: grid;
+    row-gap: 28px;
+    grid-template-columns:
+        minmax(1%, 312px) minmax(1%, 234px) minmax(1%, 164px) minmax(1%, 165px)
+        minmax(1%, 150px);
+    grid-template-rows: repeat(2, max-content);
+    line-height: 1;
+}
+
+.order {
+    padding: 0;
+}
+
+.order:not(:last-child) {
+    margin-bottom: 80px;
+}
+
+main > div:nth-child(2 of div.container) .order .col-12:last-child {
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    main > div:nth-child(2 of div.container) {
+        margin-bottom: 109px;
+    }
 }

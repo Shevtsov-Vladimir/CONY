@@ -84,7 +84,8 @@ form:first-child input {
 }
 
 .cheque hr {
-    width: 226px;
+    max-width: 226px;
+    width: calc(226 / 326.656 * 100%);
     height: 1px;
     opacity: 0.5;
     margin: 60px auto 36px auto;

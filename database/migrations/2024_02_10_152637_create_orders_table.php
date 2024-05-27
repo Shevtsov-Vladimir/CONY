@@ -18,7 +18,6 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('delivery_address');
             $table->string('orderComemnt');
-            $table->integer('quantity');
             $table->float('totalCost');
             $table->string('status');
             $table->timestamps();

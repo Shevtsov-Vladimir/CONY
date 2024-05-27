@@ -85,25 +85,13 @@ export default {
         },
 
         addOrder() {
-            console.log(
-                this.delivery_address,
-                this.orderComemnt,
-                this.productIdsQuantityList,
-                this.userId,
-                route().params.totalCost
-            );
-
-            axios
-                .post("/api/order/store", {
-                    delivery_address: this.delivery_address,
-                    orderComemnt: this.orderComemnt,
-                    userId: this.userId,
-                    totalCost: route().params.totalCost,
-                    orderProductIdAndQuantity: this.productIdsQuantityList,
-                })
-                .then((res) => {
-                    console.log(res);
-                });
+            axios.post("/api/order/store", {
+                delivery_address: this.delivery_address,
+                orderComemnt: this.orderComemnt,
+                userId: this.userId,
+                totalCost: route().params.totalCost,
+                orderProductIdAndQuantity: this.productIdsQuantityList,
+            });
         },
     },
 };

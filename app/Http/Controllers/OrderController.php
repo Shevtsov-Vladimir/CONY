@@ -38,23 +38,23 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $request;
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-
             $totalCost = Product::find(intval($key))->price * $value;
-
-            $order = Order::create([
-                'user_id' => Auth::id(),
-                'delivery_address' => $request->delivery_address,
-                'orderComemnt' => $request->orderComemnt,
-                'quantity' => $value,
-                'totalCost' => $totalCost,
-                'status' => 'Cоздан'
-            ]);
-
-            $order->products()->attach(intval($key));
         }
-        // dd($order);
+
+        $order = Order::create([
+            'user_id' => Auth::id(),
+            'delivery_address' => $request->delivery_address,
+            'orderComemnt' => $request->orderComemnt,
+            'quantity' => $value,
+            'totalCost' => $totalCost,
+            'status' => 'Cоздан'
+        ]);
+
+        foreach ($request->orderProductIdAndQuantity as $key => $value) {
+            $order->products()->attach(intval($key), ['quantity' => intval($value)]);
+        }
+
         return redirect('purchase_history');
     }
 

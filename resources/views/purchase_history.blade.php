@@ -20,30 +20,38 @@
         <div class="row">
 
             @foreach ($orders as $order)
-                <div class="col-12">
-                    <div class="purchase">
-                        <img src="{{ asset($order->products[0]->photo) }}" alt="Браслет" class="img-fluid">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>{{ $order->products[0]->title }}</th>
-                                    <th>Цена</th>
-                                    <th>Количество</th>
-                                    <th>Стоимость</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td> {{ $order->products[0]->price . '.00 руб.' }}</td>
-                                    <td>{{ $order->quantity }}</td>
-                                    <td>{{ $order->totalCost . '.00 руб.' }}</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="order">
+
+                    @foreach ($order->products as $product)
+                        <div class="col-12">
+                            <div class="purchase">
+                                <a href="{{ route('show', ['product' => $product->id]) }}"><img
+                                        src="{{ asset($product->photo) }}" alt="{{ $product->title }}"
+                                        class="img-fluid"></a>
+                                <div class="grid">
+                                    <div class="fw-bold">{{ $product->title }}</div>
+                                    <div class="d-md-block d-none fw-bold text-end">Цена</div>
+                                    <div class="d-md-block d-none fw-bold text-end">Количество</div>
+                                    <div class="d-md-block d-none fw-bold text-end">Стоимость</div>
+                                    <div class="d-none d-md-block fw-bold text-end">Заказ</div>
+                                    <div class="d-md-block d-none">{{ $product->vendor_code }}</div>
+                                    <div class="text-start text-md-end">
+                                        {{ $product->price . '.00 руб.' }}
+                                    </div>
+                                    <div class="text-start text-md-end">
+                                        <span class="d-md-none fw-bold">Количество &nbsp;</span>
+                                        {{ $product->pivot->quantity }}
+                                    </div>
+                                    <div class="d-md-block d-none text-end">
+                                        {{ $product->price * $product->pivot->quantity . '.00 руб.' }}
+                                    </div>
+                                    <div class="d-none d-md-block text-end">
+                                        {{ $order->id }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             @endforeach
 
