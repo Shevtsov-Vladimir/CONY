@@ -98,6 +98,18 @@ main > div:nth-child(2 of div.container) .col-12 {
     line-height: 1;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .grid {
+        max-width: 570px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .grid {
+        max-width: 800px;
+    }
+}
+
 .order {
     padding: 0;
 }

@@ -181,10 +181,22 @@ main > div:nth-child(2 of div.container) .col-12 {
     display: grid;
     row-gap: 28px;
     grid-template-columns:
-        minmax(1%, 312px) minmax(1%, 234px) minmax(1%, 164px) minmax(1%, 165px)
+        minmax(1%, 410px) minmax(1%, 136px) minmax(1%, 164px) minmax(1%, 165px)
         minmax(1%, 150px);
     grid-template-rows: repeat(2, max-content);
     line-height: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .grid {
+        max-width: 570px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .grid {
+        max-width: 800px;
+    }
 }
 
 @media screen and (max-width: 767px) {
