@@ -38,8 +38,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $totalCost = 0;
+        
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-            $totalCost = Product::find(intval($key))->price * $value;
+            if ($key === 'activeTabHash') { continue; }
+
+            $product = Product::find(intval($key));
+            $totalCost +=  $product->price * $value;
         }
 
         $order = Order::create([
@@ -51,6 +56,8 @@ class OrderController extends Controller
         ]);
 
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
+            if ($key === 'activeTabHash') { continue; }
+
             $order->products()->attach(intval($key), ['quantity' => intval($value)]);
         }
 
