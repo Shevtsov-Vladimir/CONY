@@ -51,6 +51,7 @@
                             @endauth
                         </div>
                     </div>
+                </div>
             </nav>
         </div>
     </header>

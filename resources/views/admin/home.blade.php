@@ -64,31 +64,68 @@
             </tab>
 
             <tab title="Заказы">
-                <div class="grid grid-orders">
-                    <div class="grid-head-item">Номер</div>
-                    <div class="grid-head-item">Адрес доставки</div>
-                    <div class="grid-head-item">Статус</div>
+                @foreach ($orders as $order)
+                    <div class="order overflow-x-auto">
+                        <div class="order-header d-flex justify-content-between">
+                            <div class="fw-bold">Заказ №1-{{ $order->id }}</div>
 
-                    @foreach ($orders as $order)
-                        <div class="grid-item">{{ $order->id }}</div>
-                        <div class="grid-item">{{ $order->delivery_address }}</div>
-                        <div class="grid-item">
-                            <form action="{{ route('orders.update', ['order' => $order]) }}" method="POST">
-                                @csrf
-                                @method('PUT')
-
-                                <select class="form-select" name="status" onchange="this.form.submit()">
-                                    @foreach ($order_statuses as $order_status)
-                                        <option @if ($order->status === $order_status) selected="selected" @endif
-                                            value="{{ $order_status }}">{{ $order_status }}</option>
-                                    @endforeach
-                                </select>
-                            </form>
-
+                            <div class="grid-order-header">
+                                <div class="fw-bold text-end">Цена</div>
+                                <div class="fw-bold text-end">Количество</div>
+                                <div class="fw-bold text-end">Сумма заказа</div>
+                                <div class="fw-bold text-end">Статус</div>
+                            </div>
                         </div>
-                    @endforeach
+                        @foreach ($order->products as $product)
+                            <div class="purchase">
+                                <a href="{{ route('show', ['product' => $product->id]) }}"><img
+                                        src="{{ asset($product->photo) }}" alt="{{ $product->title }}"
+                                        class="img-fluid"></a>
+                                <div class="grid grid-orders">
+                                    <div class="fw-bold">{{ $product->title }}</div>
+                                    <div class="text-start text-md-end">
+                                        {{ $product->price . '.00 руб.' }}
+                                    </div>
+                                    <div class="text-start text-md-end">
+                                        <span class="d-md-none fw-bold">Количество &nbsp;</span>
+                                        {{ $product->pivot->quantity }}
+                                    </div>
+                                    <div class="text-end">
+                                        {{ $product->price * $product->pivot->quantity . '.00 руб.' }}
+                                    </div>
+                                    <div class="text-end">
+                                        <form action="{{ route('orders.update', ['order' => $order]) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+            
+                                            <select class="form-select order-grid-select ms-auto" name="status" onchange="this.form.submit()">
+                                                @foreach ($order_statuses as $order_status)
+                                                    <option @if ($order->status === $order_status) selected="selected" @endif
+                                                        value="{{ $order_status }}">{{ $order_status }}</option>
+                                                @endforeach
+                                            </select>
+                                        </form>                                    </div>
+                                    <div class="d-md-block d-none">{{ $product->vendor_code }}</div>
+                                </div>
+                            </div>
+                        @endforeach
 
-                </div>
+                        <div class="order-bottom">
+                            <div class="grid-orders-bottom">
+                                <div class="fw-bold">Имя</div>
+                                <div class="fw-bold text-end">Фамилия</div>
+                                <div class="fw-bold text-end">Отчество</div>
+                                <div class="fw-bold text-end">Почта</div>
+                                <div class="fw-bold text-end">Телефон</div>
+                                <div>{{ $order->user->name }}</div>
+                                <div class="text-end">{{ $order->user->surname }}</div>
+                                <div class="text-end">{{ $order->user->patronymic }}</div>
+                                <div class="text-end">{{ $order->user->email }}</div>
+                                <div class="text-end">{{ $order->user->telephone }}</div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
             </tab>
         </tabs>
