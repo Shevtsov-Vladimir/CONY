@@ -34,7 +34,7 @@
                                     <div class="d-md-block d-none fw-bold text-end">Количество</div>
                                     <div class="d-md-block d-none fw-bold text-end">Стоимость</div>
                                     <div class="d-none d-md-block fw-bold text-end">Заказ</div>
-                                    <div class="d-md-block d-none">{{ $product->vendor_code }}</div>
+                                    <div class="d-md-block d-none">{{ $product->article }}</div>
                                     <div class="text-start text-md-end">
                                         {{ $product->price . '.00 руб.' }}
                                     </div>

@@ -19,7 +19,7 @@
             @csrf
 
 
-            <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="vendor_code">
+            <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="article">
             </div>
 
             <div class="mb-5"><input class="form-control" placeholder="Наименование товара" type="text" name="title"

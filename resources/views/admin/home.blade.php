@@ -105,7 +105,7 @@
                                                 @endforeach
                                             </select>
                                         </form>                                    </div>
-                                    <div class="d-md-block d-none">{{ $product->vendor_code }}</div>
+                                    <div class="d-md-block d-none">{{ $product->article }}</div>
                                 </div>
                             </div>
                         @endforeach

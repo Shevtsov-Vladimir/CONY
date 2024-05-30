@@ -20,8 +20,8 @@
             @method('PUT')
 
 
-            <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="vendor_code"
-                    value="{{ $product->vendor_code }}" required></div>
+            <div class="mb-5"><input class="form-control" placeholder="Артикул товара" type="text" name="article"
+                    value="{{ $product->article }}" required></div>
 
             <div class="mb-5"><input class="form-control" placeholder="Название товара" type="text" name="title"
                     value="{{ $product->title }}" required></div>

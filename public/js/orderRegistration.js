@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       delivery_address: "",
-      orderComemnt: ""
+      order_comment: ""
     };
   },
   computed: {
@@ -46,7 +46,7 @@ __webpack_require__.r(__webpack_exports__);
     addOrder: function addOrder() {
       axios.post("/api/order/store", {
         delivery_address: this.delivery_address,
-        orderComemnt: this.orderComemnt,
+        order_comment: this.order_comment,
         userId: this.userId,
         totalCost: route().params.totalCost,
         orderProductIdAndQuantity: this.productIdsQuantityList
@@ -103,7 +103,7 @@ var render = function render() {
       action: _vm.route("order.store", {
         orderProductIdAndQuantity: _vm.productIdsQuantityList,
         delivery_address: _vm.delivery_address,
-        orderComemnt: _vm.orderComemnt
+        order_comment: _vm.order_comment
       }),
       method: "POST"
     }
@@ -141,23 +141,23 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.orderComemnt,
-      expression: "orderComemnt"
+      value: _vm.order_comment,
+      expression: "order_comment"
     }],
     staticClass: "form-control",
     attrs: {
       id: "comment",
       rows: "5",
-      name: "orderComment",
+      name: "order_comment",
       required: ""
     },
     domProps: {
-      value: _vm.orderComemnt
+      value: _vm.order_comment
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.orderComemnt = $event.target.value;
+        _vm.order_comment = $event.target.value;
       }
     }
   }), _vm._v(" "), _c("button", {

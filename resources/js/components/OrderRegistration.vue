@@ -7,7 +7,7 @@
                     route('order.store', {
                         orderProductIdAndQuantity: productIdsQuantityList,
                         delivery_address: delivery_address,
-                        orderComemnt: orderComemnt,
+                        order_comment: order_comment,
                     })
                 "
                 method="POST"
@@ -27,11 +27,11 @@
                     >Комментарий к заказу</label
                 >
                 <textarea
-                    v-model="orderComemnt"
+                    v-model="order_comment"
                     class="form-control"
                     id="comment"
                     rows="5"
-                    name="orderComment"
+                    name="order_comment"
                     required
                 ></textarea>
 
@@ -55,7 +55,7 @@ export default {
     data() {
         return {
             delivery_address: "",
-            orderComemnt: "",
+            order_comment: "",
         };
     },
 
@@ -87,7 +87,7 @@ export default {
         addOrder() {
             axios.post("/api/order/store", {
                 delivery_address: this.delivery_address,
-                orderComemnt: this.orderComemnt,
+                order_comment: this.order_comment,
                 userId: this.userId,
                 totalCost: route().params.totalCost,
                 orderProductIdAndQuantity: this.productIdsQuantityList,

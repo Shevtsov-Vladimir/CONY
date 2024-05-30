@@ -236,7 +236,7 @@ var render = function render() {
     staticClass: "d-block d-md-none"
   }), _vm._v(" "), _c("div", {
     staticClass: "d-md-block d-none"
-  }, [_vm._v(_vm._s(_vm.product.vendor_code))]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.product.article))]), _vm._v(" "), _c("div", {
     staticClass: "text-start text-md-end"
   }, [_vm._v("\n            " + _vm._s(_vm.product.price + ".00 руб.") + "\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "d-block d-md-none"

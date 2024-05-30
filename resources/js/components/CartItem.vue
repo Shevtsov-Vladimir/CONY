@@ -18,7 +18,7 @@
             <div class="d-block d-md-none"></div>
             <div class="d-block d-md-none"></div>
 
-            <div class="d-md-block d-none">{{ product.vendor_code }}</div>
+            <div class="d-md-block d-none">{{ product.article }}</div>
             <div class="text-start text-md-end">
                 {{ product.price + ".00 руб." }}
             </div>

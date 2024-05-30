@@ -41,7 +41,7 @@ class OrderController extends Controller
         $totalCost = 0;
         
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-            if ($key === 'activeTabHash') { continue; }
+            if ($key === 'loglevel') { continue; }
 
             $product = Product::find(intval($key));
             $totalCost +=  $product->price * $value;
@@ -50,13 +50,13 @@ class OrderController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'delivery_address' => $request->delivery_address,
-            'orderComemnt' => $request->orderComemnt,
+            'order_comment' => $request->order_comment,
             'totalCost' => $totalCost,
             'status' => 'Cоздан'
         ]);
 
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-            if ($key === 'activeTabHash') { continue; }
+            if ($key === 'loglevel') { continue; }
 
             $order->products()->attach(intval($key), ['quantity' => intval($value)]);
         }

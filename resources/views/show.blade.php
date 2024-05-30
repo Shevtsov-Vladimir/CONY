@@ -24,7 +24,7 @@
             <div class="col-lg-6 col-12 info">
                 <div class="info-1">
                     <h3 class="h3">{{ $product->title }}</h3>
-                    <p class="vendor-code"><span>Артикул: </span>{{ $product->vendor_code }}</p>
+                    <p class="vendor-code"><span>Артикул: </span>{{ $product->article }}</p>
                     <p>{{ $product->description . '...' }}</p>
                 </div>
                 @auth
