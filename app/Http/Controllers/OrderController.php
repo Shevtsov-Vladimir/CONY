@@ -41,7 +41,7 @@ class OrderController extends Controller
         $totalCost = 0;
         
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-            if ($key === 'loglevel') { continue; }
+            if (!is_numeric($key)) { continue; }
 
             $product = Product::find(intval($key));
             $totalCost +=  $product->price * $value;
@@ -56,7 +56,7 @@ class OrderController extends Controller
         ]);
 
         foreach ($request->orderProductIdAndQuantity as $key => $value) {
-            if ($key === 'loglevel') { continue; }
+            if (!is_numeric($key)) { continue; }
 
             $order->products()->attach(intval($key), ['quantity' => intval($value)]);
         }

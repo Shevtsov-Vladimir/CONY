@@ -53,8 +53,6 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/products', ProductController::class);
     Route::resource('/admin/categories', CategoryController::class);
 
-    // $order_statuses = ['Создан', 'Принят', 'Отклонён'];
-    // Route::view('/admin', 'admin.home', ['products' => Product::all(), 'categories' => Category::all(), 'orders' => Order::all(), 'order_statuses' => $order_statuses])->name('admin.home');
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
 });
 
@@ -65,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [RegisterController::class, 'logout'])->name('auth.logout');
 
     Route::get('/purchase_history', function () {
-        $orders = Order::with('products')->get();
+        $orders = Order::with('products')->OrderByDesc('created_at')->get();
         return view('purchase_history', ['orders' => $orders]);
     })->name('purchase_history');
 
