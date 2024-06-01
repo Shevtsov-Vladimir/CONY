@@ -4,7 +4,7 @@
             {{ productStatus }}
         </button>
         <a
-            :href="route('cart')"
+        :href="route('cart')"
             @click="buyNow(productId)"
             class="btn btn-outline-dark"
             >Купить сейчас</a
@@ -41,7 +41,7 @@ export default {
         },
 
         buyNow(id) {
-            if (not(localStorage[id] > 0 && !isNaN(localStorage[id]))) {
+            if (isNaN(localStorage[id])) {
                 localStorage[id] = 1;
             }
         },

@@ -36,7 +36,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     buyNow: function buyNow(id) {
-      if (not(localStorage[id] > 0 && !isNaN(localStorage[id]))) {
+      if (isNaN(localStorage[id])) {
         localStorage[id] = 1;
       }
     }
