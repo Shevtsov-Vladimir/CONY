@@ -28,11 +28,13 @@
                     <p>{{ $product->description . '...' }}</p>
                 </div>
                 @auth
-                    <div id="showButtons" class="info-2">
-                        <h3 class="h3">{{ $product->price }}.00 руб.</h3>
+                    @if (!Auth::user()->isAdmin)
+                        <div id="showButtons" class="info-2">
+                            <h3 class="h3">{{ $product->price }}.00 руб.</h3>
 
-                        <show-buttons :product-id="{{ $product->id }}"></show-buttons>
-                    </div>
+                            <show-buttons :product-id="{{ $product->id }}"></show-buttons>
+                        </div>
+                    @endif
                 @endauth
                 <div class="info-3">
                     <p class="qty"><span>Штук в наличии:</span><span> {{ $product->quantity }}</span></p>
@@ -79,7 +81,9 @@
                                     <a href="{{ route('show', ['product' => $product]) }}"
                                         class="btn btn-outline-dark">Подробнее</a>
                                     @auth
-                                        <add-to-cart-icon product-id="{{ $product->id }}" />
+                                        @if (!Auth::user()->isAdmin)
+                                            <add-to-cart-icon product-id="{{ $product->id }}" />
+                                        @endif
                                     @endauth
                                 </div>
                             </div>

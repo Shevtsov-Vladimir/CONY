@@ -3,7 +3,8 @@
 @section('asset')
     <link rel="stylesheet" href="{{ asset('/css/catalog.css') }}">
     <script>
-        window.auth = "{{ Auth::check() }}"
+        window.auth = "{{ Auth::check() ?? false}}"
+        window.isAdmin = "{{ Auth::user()->isAdmin ?? false }}"
     </script>
     @routes
 @endsection

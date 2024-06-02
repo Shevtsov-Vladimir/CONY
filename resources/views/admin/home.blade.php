@@ -91,20 +91,28 @@
                                         {{ $product->pivot->quantity }}
                                     </div>
                                     <div class="text-end">
-                                        {{ $product->price * $product->pivot->quantity . '.00 руб.' }}
+                                        {{-- {{ $product->price * $product->pivot->quantity . '.00 руб.' }} --}}
+                                        @if ($loop->first)
+                                            {{ $order->totalCost . '.00 руб.' }}
+                                        @endif
                                     </div>
                                     <div class="text-end">
-                                        <form action="{{ route('orders.update', ['order' => $order]) }}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-            
-                                            <select class="form-select order-grid-select ms-auto" name="status" onchange="this.form.submit()">
-                                                @foreach ($order_statuses as $order_status)
-                                                    <option @if ($order->status === $order_status) selected="selected" @endif
-                                                        value="{{ $order_status }}">{{ $order_status }}</option>
-                                                @endforeach
-                                            </select>
-                                        </form>                                    </div>
+                                        @if ($loop->first)
+                                            <form action="{{ route('orders.update', ['order' => $order]) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('PUT')
+
+                                                <select class="form-select order-grid-select ms-auto" name="status"
+                                                    onchange="this.form.submit()">
+                                                    @foreach ($order_statuses as $order_status)
+                                                        <option @if ($order->status === $order_status) selected="selected" @endif
+                                                            value="{{ $order_status }}">{{ $order_status }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </form>
+                                        @endif
+                                    </div>
                                     <div class="d-md-block d-none">{{ $product->article }}</div>
                                 </div>
                             </div>
@@ -112,16 +120,24 @@
 
                         <div class="order-bottom">
                             <div class="grid-orders-bottom">
-                                <div class="fw-bold">Имя</div>
-                                <div class="fw-bold text-end">Фамилия</div>
-                                <div class="fw-bold text-end">Отчество</div>
-                                <div class="fw-bold text-end">Почта</div>
-                                <div class="fw-bold text-end">Телефон</div>
-                                <div>{{ $order->user->name }}</div>
-                                <div class="text-end">{{ $order->user->surname }}</div>
-                                <div class="text-end">{{ $order->user->patronymic }}</div>
-                                <div class="text-end">{{ $order->user->email }}</div>
-                                <div class="text-end">{{ $order->user->telephone }}</div>
+                                <div>
+                                    <div class="fw-bold">Имя</div>
+                                    <div class="fw-bold text-end">Фамилия</div>
+                                    <div class="fw-bold text-end">Отчество</div>
+                                    <div class="fw-bold text-end">Почта</div>
+                                    <div class="fw-bold text-end">Телефон</div>
+                                    <div>{{ $order->user->name }}</div>
+                                    <div class="text-end">{{ $order->user->surname }}</div>
+                                    <div class="text-end">{{ $order->user->patronymic }}</div>
+                                    <div class="text-end">{{ $order->user->email }}</div>
+                                    <div class="text-end">{{ $order->user->telephone }}</div>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Адрес доставки</div>
+                                    <div class="fw-bold">Комментарий</div>
+                                    <div>{{ $order->delivery_address }}</div>
+                                    <div>{{ $order->order_comment }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
